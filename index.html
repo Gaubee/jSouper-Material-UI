@@ -11,27 +11,13 @@
     <script type="text/javascript" src="/js/require.config.js"></script>
     <script type="text/javascript">
     require(["core"], function() {
-    	require(['./js/pages/top'],function (argument) {
-        	window.removeLoader();       	
-    	});
+    	window.removeLoader();       	
     });
     </script>
 </head>
 <body>
-	<div style="display:none" id="jSouperApp" class="_pc">
-		<xmp>
-		{{#include "./pages/default/top.html"}}
-		<!-- nav-bar -->
-		{{#include "./pages/default/nav-bar.html"}}	
-			<div class="mainindex">
-			{{#include './pages/default/main.html'}}
-			</div>
-		</xmp>
-	
+	<div style="display:none" id="jSouperApp" >
 
-
-	<!-- bottom -->
-	{{#include './pages/default/bottom.html'}}
 	</div>
 </body>
 </html>

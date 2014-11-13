@@ -46,9 +46,5 @@ define("common", ["jSouper", "jQuery","tools","UI.Material"], function(jSouper) 
         });
         console.groupEnd("初始化jSouper程序");
     });
-    console.group("加载通用样式");
-    require(["r_css!./css/common.css"])
-    console.groupEnd("加载通用样式");
-
     return jSouper;
 });

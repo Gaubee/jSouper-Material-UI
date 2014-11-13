@@ -204,36 +204,6 @@
     //如果有jQuery，则同样扩展到jQuery
     if (window.jQuery) window.jQuery.LS = window.LS;
 })(window);;
-(function() {
-    // var _isDev = false;
-    var _isDev = location.host.indexOf("dev.dotnar.com") === 0;
-    window._getCache = function(text_url) {
-        var _version = LS.get("appConfig.version");
-        if (!_version) {
-            LS.removeByPrefix("r_text!");
-        } else if (window.appConfig) {
-            if (appConfig.version != _version) {
-                LS.removeByPrefix("r_text!");
-            }
-        }
-        var _cache = _isDev ? "" : LS.get(text_url);
-        return _cache;
-    };
-    require(["appConfig"], function() {
-        var _version = LS.get("appConfig.version");
-        //更新版本号
-        LS.set("appConfig.version", appConfig.version || +new Date);
-        if (_version && (_version != appConfig.version) && !_isDev) {
-            //版本不同，下一次载入页面会更新缓存文件
-            LS.removeByPrefix("r_text!");
-            var _isrefresh = true;//confirm("发现新的版本，是否马上使用新版本页面？");
-            if (_isrefresh) {
-                location.reload();
-            }
-        }
-    });
-}());
-
 // Avoid `console` errors in browsers that lack a console.
 (function() {
     var method;
@@ -270,7 +240,7 @@
         // baseUrl: "./",
         paths: {
             //应用程序核心
-            "jSouper_base": (location.host === "dev.dotnar.com:2222") ? [ "http://localhost:9000/build/jSouper", "./js/lib/jSouper"] : "./js/lib/jSouper.min",
+            "jSouper_base": [ "http://localhost:9000/build/jSouper", "./js/lib/jSouper"],
             "jSouper": "./js/lib/jsouper.handler",
             "tools": "./js/lib/tools",
             "appConfig": window.server_url + "./config/config.json?_=" + Math.random(),
@@ -306,10 +276,12 @@
              */
             //requireJs CSS插件
             "l_css": "./js/lib/require.css",
-            "r_css": "./js/lib/require.css2",
+            // "r_css": "./js/lib/require.css2",
+            "r_css": "./js/lib/require.css",
             //requireJs Text插件
             "l_text": "./js/lib/require.text",
-            "r_text": "./js/lib/require.text2",
+            // "r_text": "./js/lib/require.text2",
+            "r_text": "./js/lib/require.text",
             //requireJs 国际化插件
             "r_i18n": "./js/lib/require.i18n",
 
@@ -330,7 +302,7 @@
             /*
              * 应用程序主体
              */
-            "core": "./js/pages/_core"
+            "core": "./js/lib/_core"
         },
         shim: {
             "jSouper": {
@@ -395,72 +367,6 @@
     require.config(requireConfig);
 
 }());
-/*强行加载配置文件*/
-;
-(function() {
-    function _getHead() {
-        var head = document.getElementsByTagName('head')[0];
-        //If BASE tag is in play, using appendChild is a problem for IE6.
-        //When that browser dies, this can be removed. Details in this jQuery bug:
-        //http://dev.jquery.com/ticket/2709
-        var baseElement = document.getElementsByTagName('base')[0];
-        if (baseElement) {
-            head = baseElement.parentNode;
-        }
-        return head
-    }
-    var config_url = require.toUrl("appConfig");
-    var scriptNode = document.createElement("script");
-    scriptNode.src = config_url;
-    _getHead().appendChild(scriptNode);
-}());
-/*自定义缓存机制*/
-;
-(function() {
-    var _load = requirejs.load;
-    var _define = window.define;
-    requirejs.load = function(context, moduleName, url) {
-        var args = arguments;
-        if (moduleName === "r_text") {
-            return _load.apply(this, args);
-        }
-        var text_url = "r_text!" + url;
-        var _cache = _getCache(text_url);
-        if (!_cache) {
-            console.log("getScript:", moduleName, url);
-            require(["r_text"], function(r_text) {
-                if (r_text.useXhr(url)) {
-                    require([text_url], function(text_script) {
-                        try {
-                            // window.define = function (name) {
-                            //     var args = Array.prototype.slice.call(arguments);
-                            //     if(typeof name !== "string"){
-                            //         args.unshift(moduleName);
-                            //     }
-                            //     return _define.apply(this, args);
-                            // }
-                            Function(text_script)();
-                            // window.define = _define;
-                        } catch (e) {
-                            console.error(e)
-                        }
-                        context.completeLoad(moduleName);
-                    });
-                } else {
-                    _load.apply(this, args);
-                }
-            })
-        } else {
-            try {
-                Function(_cache)();
-            } catch (e) {
-                console.error(e)
-            }
-            context.completeLoad(moduleName);
-        }
-    }
-
-}());
 /*
  * 模板模块的定义与解析
  */
@@ -473,8 +379,9 @@
      */
     var jSouperTemplates = {
         "UI.Material": [
-            "r_text!./template/xmp.material_ui.html",
-            "r_css!./template/css/material_ui.css"
+            "r_text!./build/xmp.material_ui.html",
+            "r_css!./build/material_ui.css",
+            "./build/xmp.material_ui"
         ]
     };
     var tpl_shims;

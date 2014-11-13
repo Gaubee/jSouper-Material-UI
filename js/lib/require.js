@@ -816,13 +816,13 @@ window.onload = function() {
 	    <span></span>\
 	    <span></span>\
 	    <span></span>\
-	    <img style="width:150px;height:150px;float:left" src="./images/logo.png" />\
 	    <span></span>\
 	    <span></span>\
 	    <span></span>\
 	    <span></span>\
 	    <span></span>\
 	    <span></span>\
+        <span></span>\
 	    <span></span>\
 	  </div>\
 	</div>';
