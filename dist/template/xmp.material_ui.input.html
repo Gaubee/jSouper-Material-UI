@@ -1,0 +1,15 @@
+<xmp type="tag" name="android:input">
+    <div class="android-input">
+	    <div class="inherit-wrap">
+	    	<!-- 移除placeholder的绑定放到最后，确保最后触发 -->
+	        <!-- <input required ${__all_attrs__} ${--placeholder}  > -->
+
+	        <!-- 提升效率，不用placeholder来减少绑定 -->
+	        <input required ${__all_attrs__} >
+	        <inputPlaceholder>${label}</inputPlaceholder>
+	        <inputHighlight></inputHighlight>
+	        <inputBar></inputBar>
+	        <inputDescription>${description}</inputDescription>
+        </div>
+    </div>
+</xmp>

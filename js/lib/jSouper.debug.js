@@ -472,7 +472,7 @@ var stringifyStr = quote;
 
 var
 //事件缓存区
-_event_cache = {},
+    _event_cache = {},
     // //底层事件缓存区，实现系统的getEventListeners
     // __base_event_cache = {},
     _fixEvent = function(e) { //@Rybylouvre
@@ -573,6 +573,10 @@ _event_cache = {},
         //声明及执行事件，用于做初始化
         rd: {
             ready: $TRUE
+        },
+        //回车事件，基于keyup
+        en: {
+            enter: "keyup"
         }
     },
     //事件生成器
@@ -592,7 +596,7 @@ _event_cache = {},
             }
         }(_isIE ? (/mouse|click|contextmenu/.test(eventName) ? _fixMouseEvent : _fixEvent) : $.noop));
 
-        if (_registerEventRouterMatch.ip[eventName] && !("oninput" in doc) ) {
+        if (_registerEventRouterMatch.ip[eventName] && !("oninput" in doc)) {
             //不真实，input只来自用户的输入，不来自脚本的改动
             // //现代浏览器模拟value被写
             // if ("oninput" in doc) {
@@ -665,7 +669,7 @@ _event_cache = {},
                         }
                     } else if (e.type === "blur") {
                         Element.fireEvent("onkeyup")
-                        // clearInterval(_TI);
+                            // clearInterval(_TI);
                     } else { //paste cut keypress  // 1
                         _fixPropertychangeLock = $TRUE;
                         _deleteOrChienseInput = $FALSE;
@@ -826,6 +830,15 @@ _event_cache = {},
                     type: "ready"
                 });
             })
+        } else if (result._cacheName = _registerEventRouterMatch.en[eventName]) {;
+            (function() {
+                result.name = result._cacheName;
+                result.fn = function(e) {
+                    if (e.which === 13) {
+                        return _fn(e);
+                    }
+                }
+            }());
         }
         _event_cache[elementHash + $.hashCode(eventFun)] = result;
         return result;
@@ -834,8 +847,8 @@ _event_cache = {},
     //现代浏览器的事件监听
     _addEventListener = function(Element, eventName, eventFun, elementHash) {
         var eventConfig = _registerEventBase(Element, eventName, eventFun, elementHash)
-        // var __base_hash_code = $.hashCode(Element);
-        // var event_cache = __base_event_cache[__base_hash_code] || (__base_event_cache[__base_hash_code] = {});
+            // var __base_hash_code = $.hashCode(Element);
+            // var event_cache = __base_event_cache[__base_hash_code] || (__base_event_cache[__base_hash_code] = {});
         if ($.isS(eventConfig.name)) {
             Element.addEventListener(eventConfig.name, eventConfig.fn, $FALSE);
             // $.p(event_cache[eventConfig.name] || (event_cache[eventConfig.name] = []), eventConfig.fn);
@@ -858,8 +871,8 @@ _event_cache = {},
     //IE浏览器的时间监听
     _attachEvent = function(Element, eventName, eventFun, elementHash) {
         var eventConfig = _registerEventBase(Element, eventName, eventFun, elementHash)
-        // var __base_hash_code = $.hashCode(Element);
-        // var event_cache = __base_event_cache[__base_hash_code] || (__base_event_cache[__base_hash_code] = {});
+            // var __base_hash_code = $.hashCode(Element);
+            // var event_cache = __base_event_cache[__base_hash_code] || (__base_event_cache[__base_hash_code] = {});
         if ($.isS(eventConfig.name)) {
             Element.attachEvent("on" + eventConfig.name, eventConfig.fn);
             // $.p(event_cache[eventConfig.name] || (event_cache[eventConfig.name] = []), eventConfig.fn);
@@ -882,7 +895,6 @@ _event_cache = {},
     //对外的接口
     _registerEvent = $.registerEvent = _isIE ? _attachEvent : _addEventListener,
     _cancelEvent = $.cancelEvent = _isIE ? _detachEvent : _removeEventListener;
-
 /*
  * SmartTriggerHandle constructor
  * 用于View层中声明的绑定做包裹。
@@ -3412,32 +3424,32 @@ var QuotedString = /"(?:\.|(\\\")|[^\""\n])*"|'(?:\.|(\\\')|[^\''\n])*'/g, //引
 
 //用于抽离字符串的中特定的字符来避免解析，完成后可以回退这些字符串
 var _string_placeholder = {
-    save: function(regExp_placeholder, str) {
-        var map = this.maps[regExp_placeholder] = {
-            ph: _placeholder("_v"),
-            strs: []
-        };
-        var strings = map.strs;
-        var placeholder = map.ph;
-        str = str.replace(regExp_placeholder, function(matchStr) {
-            $.p(strings, matchStr);
-            return placeholder;
-        });
-        return str;
-    },
-    maps: {},
-    release: function(regExp_placeholder, str) {
-        if (this.maps.hasOwnProperty(regExp_placeholder)) {
-            var map = this.maps[regExp_placeholder];
+        save: function(regExp_placeholder, str) {
+            var map = this.maps[regExp_placeholder] = {
+                ph: _placeholder("_v"),
+                strs: []
+            };
             var strings = map.strs;
             var placeholder = map.ph;
-            str = str.replace(RegExp(placeholder, "g"), function(ph) {
-                return strings.shift();
-            })
-        };
-        return str;
-    }
-},
+            str = str.replace(regExp_placeholder, function(matchStr) {
+                $.p(strings, matchStr);
+                return placeholder;
+            });
+            return str;
+        },
+        maps: {},
+        release: function(regExp_placeholder, str) {
+            if (this.maps.hasOwnProperty(regExp_placeholder)) {
+                var map = this.maps[regExp_placeholder];
+                var strings = map.strs;
+                var placeholder = map.ph;
+                str = str.replace(RegExp(placeholder, "g"), function(ph) {
+                    return strings.shift();
+                })
+            };
+            return str;
+        }
+    },
     // _head = /\{([\w\W]*?)\(/g,
     // _footer = /\)\}/g, ///\)[\s]*\}/g,
     _matchRule = /\{([\w\W]*?)\(([\w\W]*?)\)\}/g, ///\{[\w\W]*?\([\w\W]*?\)[\s]*\}/,
@@ -3473,24 +3485,24 @@ var _string_placeholder = {
         str = _string_placeholder.save(EscapeString, str);
 
         var parseStr = str
-        //模拟HTML转义
-        // .replace(/&gt;/g, ">")
-        // .replace(/&lt;/g, "<")
-        // .replace(/&amp;/g, "&")
-        // .replace(/&quot;/g, '"')
-        // .replace(/&apos;/g, "'")
-        .replace(_matchRule, function(match, handleName, expression) {
-            handleName = _release_ph_foo($.trim(handleName));
-            if (!V.handles[handleName]) {
-                throw "Can't find handle:" + handleName;
-            }
-            $.p(expression_strs, {
-                nodeType: 1,
-                handleName: handleName,
-                expression: _release_ph_foo(expression)
+            //模拟HTML转义
+            // .replace(/&gt;/g, ">")
+            // .replace(/&lt;/g, "<")
+            // .replace(/&amp;/g, "&")
+            // .replace(/&quot;/g, '"')
+            // .replace(/&apos;/g, "'")
+            .replace(_matchRule, function(match, handleName, expression) {
+                handleName = _release_ph_foo($.trim(handleName));
+                if (!V.handles[handleName]) {
+                    throw "Can't find handle:" + handleName;
+                }
+                $.p(expression_strs, {
+                    nodeType: 1,
+                    handleName: handleName,
+                    expression: _release_ph_foo(expression)
+                });
+                return expression_ph;
             });
-            return expression_ph;
-        });
 
         //还原转义字符
         parseStr = _string_placeholder.release(EscapeString, parseStr);
@@ -3517,7 +3529,7 @@ var _string_placeholder = {
     /*
      * expores function
      */
-    _ignoreNameSpaceTag = "|area|br|col|embed|hr|img|input|link|meta|param|"+_svgTagStr.replace(/\s/g,"|")+"|",
+    _ignoreNameSpaceTag = "|area|br|col|embed|hr|img|input|link|meta|param|" + _svgTagStr.replace(/\s/g, "|") + "|",
     V = {
         prefix: "bind-",
         namespace: "fix:",
@@ -3615,26 +3627,41 @@ var _string_placeholder = {
                             }
                         }
                     }
-                }else if (type === "text/tag") {//代码模板
+                } else if (type === "text/tag/vm") {
+                    if (!name) {
+                        console.error("Custom tag VM-scripts must declare the name tags");
+                    } else {
+                        var scriptText = $.trim(scriptNode.text);
+                        if (scriptText) {
+                            try {
+                                //不带编译功能
+                                V.customTagsInit[name.toLowerCase()] = Function("return " + scriptText)();;
+                                $.D.rm(scriptNode);
+                            } catch (e) {
+                                console.error(e);
+                            }
+                        }
+                    }
+                } else if (type === "text/tag") { //代码模板
                     //临时编译临时使用
                     //而且仅仅只能在页面解析就需要定义完整，因为是代码模板
                     if (name) {
                         V.customTags[name.toLowerCase()] = scriptNode.text;
-                    }else{
+                    } else {
                         console.error("the name of custom tag could not empty!");
                     }
                 }
             });
             return node;
         },
-        _scansCustomTags:function (node) {
+        _scansCustomTags: function(node) {
             node || (node = doc);
             //想解析子模块
             var xmps = $.s(node.getElementsByTagName("xmp"));
             Array.prototype.push.apply(xmps, $.s(node.getElementsByTagName(V.namespace + "xmp")));
             $.E(xmps, function(tplNode) {
                 var type = tplNode.getAttribute("type");
-                if (type!=="tag") {
+                if (type !== "tag") {
                     return
                 }
                 var name = tplNode.getAttribute("name");
@@ -3643,7 +3670,7 @@ var _string_placeholder = {
                         V.customTags[name.toLowerCase()] = $.trim(tplNode.innerHTML);
                         $.D.rm(tplNode);
                     }
-                }else{
+                } else {
                     console.error("the name of custom tag could not empty!");
                 }
             });
@@ -3651,36 +3678,36 @@ var _string_placeholder = {
             $.e(node.getElementsByTagName("script"), function(scriptNode) {
                 var type = scriptNode.getAttribute("type");
                 var name = scriptNode.getAttribute("name");
-                if (type !== "text/tag") {//代码模板
+                if (type !== "text/tag") { //代码模板
                     return
                 }
                 //临时编译临时使用
                 //而且仅仅只能在页面解析就需要定义完整，因为是代码模板
                 if (name) {
                     V.customTags[name.toLowerCase()] = $.trim(scriptNode.text);
-                }else{
+                } else {
                     console.error("the name of custom tag could not empty!");
                 }
             });
             return node;
         },
-        _buildCustomTags:function (node) {
+        _buildCustomTags: function(node) {
             node || (node = doc);
-            _traversal(node,function(currentNode,index,parentNode){
-                if (currentNode.nodeType===1) {
+            _traversal(node, function(currentNode, index, parentNode) {
+                if (currentNode.nodeType === 1) {
                     var tagName = currentNode.tagName.toLowerCase();
-                    if(tagName.indexOf(V.namespace)===0){
+                    if (tagName.indexOf(V.namespace) === 0) {
                         tagName = tagName.substr(V.namespace.length)
                     }
-                    if (V._isCustonTagNodeLock[tagName]===$TRUE) {
+                    if (V._isCustonTagNodeLock[tagName] === $TRUE) {
                         return
                     }
-                    if(V.customTags[tagName]){
+                    if (V.customTags[tagName]) {
                         var node_id = $.uid();
                         var nodeInfo = {
-                            tagName:tagName,
-                            innerHTML:currentNode.innerHTML,
-                            __node__:currentNode
+                            tagName: tagName,
+                            innerHTML: currentNode.innerHTML,
+                            __node__: currentNode
                         };
                         $.E($.s(currentNode.attributes), function(attr) {
                             //fix IE
@@ -3702,7 +3729,7 @@ var _string_placeholder = {
                         });
 
                         V._customTagNode[node_id] = nodeInfo;
-                        $.D.re(parentNode,$.D.cs(parse("{{custom_tag '"+tagName+"','"+node_id+"'}}")),currentNode);
+                        $.D.re(parentNode, $.D.cs(parse("{{custom_tag '" + tagName + "','" + node_id + "'}}")), currentNode);
                     }
                 }
             });
@@ -3737,6 +3764,7 @@ var _string_placeholder = {
         attrHandles: [],
         modules: {},
         modulesInit: {},
+        customTagsInit: {},
         customTags: {},
         _customTagNode: {},
         _isCustonTagNodeLock: {},
@@ -3781,16 +3809,16 @@ var Expression = {
 //JS对象的获取
 var _obj_get_reg = /([a-zA-Z_?.$][\w?.$]*)/g;
 var _const_obj = {
-    "true": $TRUE,
-    "NaN": $TRUE,
-    "false": $TRUE,
-    "null": $TRUE,
-    "new": $TRUE,
-    "window": $TRUE
-    /*,
-    "this": $TRUE*/
-}
-//编译模板中的表达式
+        "true": $TRUE,
+        "NaN": $TRUE,
+        "false": $TRUE,
+        "null": $TRUE,
+        "new": $TRUE,
+        "window": $TRUE
+            /*,
+            "this": $TRUE*/
+    }
+    //编译模板中的表达式
 var _build_expression = function(expression) {
     //不支持直接Object和Array取值：{a:"a"}或者[1,2]
     //目前暂时支持hash取值，等Path对象完善后才能优化触发hash取值
@@ -3822,7 +3850,7 @@ var _build_expression = function(expression) {
         return string_sets.shift();
     });
     _build_str = "return function(vm){try{return [" + result + "]}catch(e){/*debugger;var c=window.console;if(c){c.error(e);}*/return [];}}"
-    // console.dir(_build_str);
+        // console.dir(_build_str);
     return Expression.set(expression, _build_str, varsSet);
 };
 
@@ -3867,7 +3895,6 @@ var _build_expression = function(expression) {
 //     $.p(result, expression.substr(index));
 //     return result;
 // }
-
 var _commentPlaceholder = function(handle, parentHandle, commentText) {
 	var handleName = handle.handleName,
 		commentText = commentText || (handleName + handle.id),
@@ -4130,8 +4157,81 @@ V.rh("#with", function(handle, index, parentHandle) {
 });
 V.rh("/with", placeholderHandle);
 
+var custom_instructions = {
+	// - ： 表示将匹配到的属性移除
+	__1: function(attrName) {
+		return "ele-remove_attribute-" + Math.random().toString(36).substr(2) + "-" + attrName + "={{" + __ModelConfig__.prefix.This + "&&'" + attrName + "'}} ";
+	},
+	"--": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (attrName === attributeName) {
+				result += custom_instructions.__1(attrName);
+			}
+		});
+		return result;
+	},
+	"^-": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (!attrName.indexOf(attributeName)) {
+				result += custom_instructions.__1(attrName);
+			}
+		});
+		return result;
+	},
+	"$-": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (attrName.indexOf(attributeName) === attrName.length - attributeName.length) {
+				result += custom_instructions.__1(attrName);
+			}
+		});
+		return result;
+	},
+	"*-": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (attrName.indexOf(attributeName) !== -1) {
+				result += custom_instructions.__1(attrName);
+			}
+		});
+		return result;
+	},
+	// + ： 表示将匹配到的属性加入
+	__2: function(customTagNodeInfo, attributeName) {
+		return attributeName + "=" + stringifyStr(customTagNodeInfo[attributeName]) + " ";
+	},
+	"^+": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (!attrName.indexOf(attributeName)) {
+				result += custom_instructions.__2(customTagNodeInfo, attributeName);
+			}
+		});
+		return result;
+	},
+	"$+": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (attrName.indexOf(attributeName) === attrName.length - attributeName.length) {
+				result += custom_instructions.__2(customTagNodeInfo, attributeName);
+			}
+		});
+		return result;
+	},
+	"*+": function(customTagNodeInfo, attributeName, attrNameList) {
+		var result = "";
+		$.E(attrNameList, function(attrName) {
+			if (attrName.indexOf(attributeName) !== -1) {
+				result += custom_instructions.__2(customTagNodeInfo, attributeName);
+			}
+		});
+		return result;
+	}
+}
 V.rt("custom_tag", function(handle, index, parentHandle) {
-	// console.log(handle)
+	// console.log(handle)1
 	var id = handle.id,
 		childNodes = handle.childNodes,
 		expression = Expression.get(handle.handleInfo.expression),
@@ -4152,35 +4252,54 @@ V.rt("custom_tag", function(handle, index, parentHandle) {
 				var customTagNodeInfo = V._customTagNode[customTagNodeId];
 				if (!customTagCode) {
 					customTagCode = V.customTags[customTagName];
-					customTagCode = customTagCode.replace(/\$\{__all_attrs__\}/g, function() {
+
+					customTagCode = customTagCode.replace(/\$\{__all_attrs__\}\=\"\"|\$\{__all_attrs__\}/g, function() { //浏览器自动补全属性
 						var result = ""
 						for (var key in customTagNodeInfo) {
 							if (key === "tagName" || key === "innerHTML" || key === "__node__") {
 								continue;
 							}
 							if (customTagNodeInfo.hasOwnProperty(key)) {
-								result += key + "=" + stringifyStr(customTagNodeInfo[key])+" ";
+								result += key + "=" + stringifyStr(customTagNodeInfo[key]) + " ";
 							}
 						}
 						return result;
-					});//.replace(/\s\=\"\"/g,"");//浏览器自动补全属性
-					customTagCode = customTagCode.replace(/\$\{([\w\W]+?)\}/g, function(matchStr, attributeName) {
+					}); //.replace(/\s\=\"\"/g,"");//浏览器自动补全属性
+					// console.log(customTagCode);
+					var attrNameList = [];
+					for (var _name in customTagNodeInfo) {
+						if (_name === "tagName" || _name === "innerHTML" || _name === "__node__") {
+							continue;
+						}
+						attrNameList.push(_name);
+					}
+					customTagCode = customTagCode.replace(/\$\{([\w\W]+?)\}\=\"\"|\$\{([\w\W]+?)\}/g, function(matchStr, x, attributeName) {
+						attributeName || (attributeName = x); //两个匹配任选一个
+						var instruction_type = attributeName.charAt(1);
+						if (/\-|\+/.test(instruction_type)) {
+							var instruction_handle = custom_instructions[attributeName.charAt(0) + instruction_type];
+							if (instruction_handle) {
+								return instruction_handle(customTagNodeInfo, attributeName.substr(2), attrNameList); // ? customTagNodeInfo[attributeName] : "";
+							}
+						}
 						return customTagNodeInfo[attributeName] || "";
 					});
 				}
 				//锁定标签，避免死循环解析
-				// console.log("lock ",customTagNodeInfo.tagName);
-				V._isCustonTagNodeLock[customTagNodeInfo.tagName] = true;
+				// console.log("lock ",customTagName);
+				V._isCustonTagNodeLock[customTagName] = true;
 				var module_id = "custom_tag-" + id + "-" + uuid;
 				var module = V.customTagModules[customTagCode] || (V.customTagModules[customTagCode] = jSouper.parseStr(customTagCode, module_id));
 				var modulesInit = V.modulesInit[module_id];
-				if (modulesInit) {
+				var vmInit = V.customTagsInit[customTagName];
+				if (modulesInit || vmInit) {
 					V.modulesInit[module_id] = function(vm) {
-						modulesInit.call(customTagNodeInfo, vm, customTagNodeInfo.__node__);
+						modulesInit && modulesInit.call(customTagNodeInfo, vm, customTagNodeInfo.__node__);
+						vmInit && vmInit.call(customTagNodeInfo, vm, customTagNodeInfo.__node__);
 					}
 				}
 				//解锁
-				V._isCustonTagNodeLock[customTagNodeInfo.tagName] = false;
+				V._isCustonTagNodeLock[customTagName] = false;
 				module($UNDEFINED, {
 					onInit: function(vm) {
 						//加锁，放置callback前的finallyRun引发的
@@ -4931,6 +5050,20 @@ V.rt("#with", function(handle, index, parentHandle) {
 	return trigger;
 });
 var _testDIV = fragment(), //$.D.cl(shadowDIV),
+    _attrDataFormat = function (value) {
+        var type = $.st(value||"",":");
+        switch(type){
+            case "$Boolean":
+                value = !!_booleanFalseRegExp(_split_laveStr);
+                break;
+            case "$String":
+                value = _split_laveStr;
+                break;
+            // case "Object"://JSON???....
+
+        }
+        return value
+    },
     _getAttrOuter = function(attrVM) {
         // var NodeList = attrVM.NodeList;
         var topNode = attrVM.topNode();
@@ -4953,11 +5086,11 @@ var _testDIV = fragment(), //$.D.cl(shadowDIV),
         // return result
         if (topNode.innerText!==$UNDEFINED) {
             _getAttrOuter = function (attrVM) {
-                return attrVM.topNode().innerText;
+                return _attrDataFormat(attrVM.topNode().innerText);
             }
         }else{
             _getAttrOuter = function (attrVM) {
-                return attrVM.topNode().textContent;
+                return _attrDataFormat(attrVM.topNode().textContent);
             }
         }
         return _getAttrOuter(attrVM);
@@ -5006,7 +5139,6 @@ var _AttributeHandleEvent = {
     // checked:self.bool,
     radio: function(key, currentNode, attrVM) { //radio checked
         var attrOuter = _getAttrOuter(attrVM);
-        debugger
         if (attrOuter === currentNode.value) {
             currentNode[key] = attrOuter;
         } else {
@@ -5075,6 +5207,23 @@ V.ra(function(attrKey) {
     return _AttributeHandleEvent.dir;
 })
 
+function eventFireElementEvent(key, currentNode, attrVM, vi /*, dm_id*/ , handle, triggerTable) {
+	var elementEventName = key.replace("ele-", "").split("-").shift();
+	//属性不支持大写，转化成峰驼式
+	elementEventName = elementEventName.replace(/\_(\w)/g, function(matchStr, _char ) {
+		return _char.toUpperCase();
+	});
+	var attrOuter = _getAttrOuter(attrVM);
+	if (typeof currentNode[elementEventName] === "function" && attrOuter) {
+		currentNode[elementEventName](attrOuter);
+	}
+};
+//触发元素的原生函数，比如input.foucs()
+V.ra(function(attrKey) {
+	return attrKey.indexOf("ele-") === 0;
+}, function(attrKey) {
+	return eventFireElementEvent;
+})
 var _elementCache = {},
 	eventListerAttribute = function(key, currentNode, attrVM, vi /*, dm_id*/ ,handle, triggerTable) {
 		var attrOuter = _getAttrOuter(attrVM),

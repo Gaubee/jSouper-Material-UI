@@ -1,0 +1,66 @@
+.android-paper-button{
+    line-height: 20px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 0;
+    display: inline-block;
+    height: 36px;
+    min-width: 88px;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 16px;
+	.border-radius(2px);
+	.background-clip(padding-box);
+	*{
+		.transition(all 450ms @ease-out-function 0ms);
+		.box-sizing(border-box);
+	}
+	.paper-container{
+		.box-shadow(0 1px 6px rgba(0, 0, 0, 0.12));
+		background-color: #FFF;
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		&:hover{
+		    background-color: #E6E6E6;
+		}
+		spanInner{
+			min-width: 88px;
+			padding: 0 16px;
+			color: rgba(0, 0, 0, 0.87);
+			text-decoration: none;
+			line-height: 36px;
+			height: 36px;
+			display: inline-block;
+			position: relative;
+			text-align: center;
+		}
+		.ripple{
+		    position: absolute;
+			top: 100%;
+			left: 100%;
+			.transform( translate(-50%, -50%));
+			width: 0;
+			height: 0;
+			.background-clip(padding);
+			.border-radius(50%);
+			&.show{
+				.animation(ripple-default-animation 0.5s);
+			}
+		}
+	}
+}
+.ripple-default-animation {
+	0% { background-color: rgba(204, 204, 204, 0); } 
+	25% { background-color: #cccccc; } 
+	100% { width: 150px; height: 150px; background-color: rgba(204, 204, 204, 0); }
+};
+@-webkit-keyframes ripple-default-animation {.ripple-default-animation;}
+@-moz-keyframes ripple-default-animation {.ripple-default-animation;}
+@-o-keyframes ripple-default-animation {.ripple-default-animation;}
+@keyframes ripple-default-animation {.ripple-default-animation;}

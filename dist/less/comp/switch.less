@@ -1,0 +1,93 @@
+.android-switch{
+	position: relative;
+	height: 24px;
+	margin: 8px;
+	box-sizing: border-box;
+	display: inline-block;
+	*{
+		box-sizing: border-box;
+		.transition(all 450ms @ease-out-function 0ms);
+	}
+
+	input{
+		display: block;
+		.calc(width, "16px + 100%");
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		z-index: 1;
+		margin-left: -8px;
+		cursor: pointer;
+	}
+	>.container{
+		position: relative;
+		width: 32px;
+		height: 16px;
+		.transform(translate3d(0, 0, 0));
+		display: inline-block;
+		.switch-bar{
+			background-color: rgba(0, 0, 0, 0.54);
+			position: absolute;
+			top: 12px;
+			width: 100%;
+			height: 1px;
+			pointer-events: none;
+		}
+		.container-inner{
+			position: relative;
+			top: 4px;
+			left: 0;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+			margin-left: -8px;
+			.transition(all 0.1s linear);
+		}
+		.off{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 16px;
+			height: 16px;
+			border: solid 2px;
+			border-radius: 50%;
+			// .transition(all ease 0.28s);
+			border-color: rgba(0, 0, 0, 0.54);
+			box-sizing: border-box;
+		}
+		.on{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			// .transition(all ease 0.28s);
+			.transform(scale(0));
+			background-color: rgba(102, 187, 106, 0.87);
+		}
+
+	}
+	>.container.check{
+		.container-inner{
+			left: 100%;
+		}
+		.off{
+			border-color: rgba(102, 187, 106, 0.87);
+		}
+		.on{
+			.transform(scale(0.55));
+		}
+	}
+
+	>.label{
+		margin-left: 16px;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+		pointer-events: none;
+		width: auto;
+	}
+}
