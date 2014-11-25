@@ -2,7 +2,7 @@
 <xmp type="tag" name="android:paperButton">
     <div class="android-paper-button android-paper z-depth-{{$Private.$Cache.layer_num}}" event-click="{{'$Private.$Event.show'}}">
         <div class="paper-container">
-            <div class="ripple {{$Private.$Cache.show&&'show'}}" style="top:{{$Private.$Cache.top}}px;left:{{$Private.$Cache.left}}px">
+            <div class="ripple {{$Private.$Cache.show&&'show'}}" bind-style="top:{{$Private.$Cache.top}}px;left:{{$Private.$Cache.left}}px">
             </div>
             <spanInner ${__all_attrs__}>
                 ${innerHTML}

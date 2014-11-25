@@ -28,7 +28,7 @@
             <android:switch value="{{switch_1}}" bind-input="{{'switch_1'}}">通过伪类显示字体图标</android:switch>
             <android:switch value="{{switch_2}}" bind-input="{{'switch_2'}}">通过HTML直接显示字体图标</android:switch>
             <hr>
-            <div id="icons" style="width:300px;word-wrap: break-word;display:{{switch_1&&'inline-block'||'none'}};">
+            <div id="icons" bind-style="width:300px;word-wrap: break-word;display:{{switch_1&&'inline-block'||'none'}};">
                 <android:icon type="toggle-check-box"></android:icon>
                 <android:icon type="toggle-check-box-outline-blank"></android:icon>
                 <android:icon type="toggle-radio-button-off"></android:icon>
@@ -786,7 +786,7 @@
             </div>
 
 
-            <div id="icons" style="width:300px;word-wrap: break-word;display:{{switch_2&&'inline-block'||'none'}};font-family: 'material-design-fonticon';">
+            <div id="icons" bind-style="width:300px;word-wrap: break-word;display:{{switch_2&&'inline-block'||'none'}};font-family: 'material-design-fonticon';">
 <span></span>
 <span></span>
 <span></span>
