@@ -16,10 +16,9 @@ customTagInit("android:paperbutton", function(vm) {
     vm.set("$Private.$Event.show", function(e) {
         _normal();
         clearTimeout(_show_ti);
+        vm.set("$Private.$Cache.top", e.clientY - this.offsetTop);
+        vm.set("$Private.$Cache.left", e.clientX - this.offsetLeft);
         _clicking();
-        // console.log(e.pageY,e.offsetY);
-        vm.set("$Private.$Cache.top", e.offsetY);
-        vm.set("$Private.$Cache.left", e.offsetX);
         _show_ti = setTimeout(function() {
             _normal();
         }, 500)
