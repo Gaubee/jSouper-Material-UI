@@ -480,6 +480,7 @@ hr {
   position: relative;
   margin-top: 24px;
   margin-bottom: 48px;
+  height: 42px;
 }
 .android-input * {
   margin: 0;
@@ -490,11 +491,13 @@ hr {
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 .android-input .inherit-wrap {
-  width: 320px;
-  height: 0;
   background-color: #00f;
   color: #00f;
   display: block;
+  visibility: hidden;
+}
+.android-input .inherit-wrap * {
+  visibility: visible;
 }
 .android-input input {
   display: block;
@@ -535,17 +538,18 @@ hr {
   opacity: .25;
   height: 19px;
   top: -3px;
-  width: 160px;
   z-index: -1;
+  width: 100%;
 }
 .android-input inputBar {
   position: relative;
   display: block;
-  width: 320px;
+  width: 100%;
   z-index: 1;
+  background-color: inherit;
 }
-.android-input inputBar::after,
-.android-input inputBar::before {
+.android-input inputBar:after,
+.android-input inputBar:before {
   box-sizing: border-box;
   content: '';
   height: 2px;
@@ -553,10 +557,10 @@ hr {
   width: 0;
   position: absolute;
 }
-.android-input inputBar::before {
+.android-input inputBar:before {
   left: 50%;
 }
-.android-input inputBar::after {
+.android-input inputBar:after {
   right: 50%;
 }
 .android-input inputDescription {
@@ -569,22 +573,27 @@ hr {
   outline: none;
   box-shadow: none;
 }
-.android-input input:focus + inputPlaceholder {
+.android-input input:focus ~ inputPlaceholder {
   color: inherit;
   font-size: 13px !important;
   font-weight: 300;
   top: -32px;
 }
-.android-input input:focus + inputPlaceholder + inputHighlight {
+.android-input input:focus ~ inputHighlight {
   width: 0;
   background-color: inherit;
 }
-.android-input input:focus + inputPlaceholder + inputHighlight + inputBar::after,
-.android-input input:focus + inputPlaceholder + inputHighlight + inputBar::before {
+.android-input input:focus ~ inputBar:after,
+.android-input input:focus ~ inputBar:before {
+  -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  -moz-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  -ms-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  -o-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   background-color: inherit;
   width: 50%;
 }
-.android-input input:focus + inputPlaceholder + inputHighlight + inputBar + inputDescription {
+.android-input input:focus ~ inputDescription {
   display: block;
 }
 .android-input input:not(:focus):valid + inputPlaceholder {
@@ -592,7 +601,6 @@ hr {
   font-size: 13px !important;
   font-weight: 300;
   top: -32px;
-  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 .android-switch {
   position: relative;
@@ -706,8 +714,8 @@ hr {
 .android-icon {
   display: inline-block;
 }
-.android-icon > .icon-contain {
-  font-family: 'material-design-fonticon';
+.android-icon > .materail-icon-contain {
+  font-family: 'material-design-fonticon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

@@ -756,7 +756,7 @@ var _icon_map = {
 };
 customTagInit("android:icon", function(vm) {
 	var iconNode = vm.queryElement({
-		className: "icon-contain"
+		className: "materail-icon-contain"
 	})[0];
 
 	function _initIcon() {

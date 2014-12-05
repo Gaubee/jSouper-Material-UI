@@ -24,8 +24,8 @@ customTagInit("android:paperbutton", function(vm) {
     vm.set("$Private.$Event.show", function(e) {
         _normal();
         clearTimeout(_show_ti);
-        vm.set("$Private.$Cache.top", e.clientY - this.offsetTop);
-        vm.set("$Private.$Cache.left", e.clientX - this.offsetLeft);
+        vm.set("$Private.$Cache.top", e.pageY - this.offsetTop);
+        vm.set("$Private.$Cache.left", e.pageX - this.offsetLeft);
         _clicking();
         _show_ti = setTimeout(function() {
             _normal();
@@ -792,7 +792,7 @@ var _icon_map = {
 };
 customTagInit("android:icon", function(vm) {
 	var iconNode = vm.queryElement({
-		className: "icon-contain"
+		className: "materail-icon-contain"
 	})[0];
 
 	function _initIcon() {
