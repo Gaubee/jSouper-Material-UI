@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"rg",
+				"rgba(r,g,b,a)"
+			],
+			[
+				"b",
+				"border"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
 				"of",
 				"offsetY"
 			],
@@ -22,10 +38,6 @@
 			[
 				"in",
 				"inline-block"
-			],
-			[
-				"mar",
-				"margin-left"
 			],
 			[
 				"co",
@@ -424,10 +436,6 @@
 				"z-index"
 			],
 			[
-				"b",
-				"bold"
-			],
-			[
 				"wi",
 				"width"
 			],
@@ -506,14 +514,6 @@
 			[
 				"err",
 				"errorMsg"
-			],
-			[
-				"cha",
-				"changepwd"
-			],
-			[
-				"data",
-				"dataFormat"
 			]
 		]
 	},
@@ -523,7 +523,15 @@
 			"file": "dist/template/xmp.material_ui.input.html",
 			"settings":
 			{
-				"buffer_size": 525,
+				"buffer_size": 520,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/template/xmp.material_ui.progress_circular.html",
+			"settings":
+			{
+				"buffer_size": 411,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +539,23 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 57085,
+				"buffer_size": 57262,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/template/xmp.material_ui.switch.html",
+			"settings":
+			{
+				"buffer_size": 479,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/template/xmp.material_ui.dropdown_menu.html",
+			"settings":
+			{
+				"buffer_size": 1146,
 				"line_ending": "Windows"
 			}
 		},
@@ -544,34 +568,10 @@
 			}
 		},
 		{
-			"file": "dist/js/xmp.material_ui.icons.js",
-			"settings":
-			{
-				"buffer_size": 26211,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "build/xmp.material_ui.js",
-			"settings":
-			{
-				"buffer_size": 27720,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "dist/js/xmp.material_ui.buttons.js",
-			"settings":
-			{
-				"buffer_size": 697,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "build/xmp.material_ui.html",
 			"settings":
 			{
-				"buffer_size": 2898,
+				"buffer_size": 3303,
 				"line_ending": "Windows"
 			}
 		},
@@ -579,7 +579,23 @@
 			"file": "dist/less/comp/exports.less",
 			"settings":
 			{
-				"buffer_size": 132,
+				"buffer_size": 166,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/progressCircular.less",
+			"settings":
+			{
+				"buffer_size": 3300,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/input.less",
+			"settings":
+			{
+				"buffer_size": 1876,
 				"line_ending": "Windows"
 			}
 		},
@@ -587,7 +603,7 @@
 			"file": "dist/less/comp/switch.less",
 			"settings":
 			{
-				"buffer_size": 1647,
+				"buffer_size": 1757,
 				"line_ending": "Windows"
 			}
 		},
@@ -624,18 +640,66 @@
 			}
 		},
 		{
-			"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper-button.less",
+			"file": "dist/js/xmp.material_ui.icons.js",
 			"settings":
 			{
-				"buffer_size": 5111,
+				"buffer_size": 26211,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "dist/less/comp/input.less",
+			"file": "build/xmp.material_ui.js",
 			"settings":
 			{
-				"buffer_size": 1878,
+				"buffer_size": 32396,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/js/xmp.material_ui.buttons.js",
+			"settings":
+			{
+				"buffer_size": 697,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/js/xmp.material_ui.progress_circular.js",
+			"settings":
+			{
+				"buffer_size": 166,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/js/xmp.material_ui.input.js",
+			"settings":
+			{
+				"buffer_size": 256,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/js/xmp.materail_ui.switch.js",
+			"settings":
+			{
+				"buffer_size": 358,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/js/xmp.__core__.js",
+			"settings":
+			{
+				"buffer_size": 4197,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper-button.less",
+			"settings":
+			{
+				"buffer_size": 5111,
 				"line_ending": "Windows"
 			}
 		},
@@ -794,12 +858,10 @@
 	"expanded_folders":
 	[
 		"/E/jSouper-Material-UI",
-		"/E/jSouper-Material-UI/build",
 		"/E/jSouper-Material-UI/dist",
 		"/E/jSouper-Material-UI/dist/js",
 		"/E/jSouper-Material-UI/dist/less",
 		"/E/jSouper-Material-UI/dist/less/comp",
-		"/E/jSouper-Material-UI/dist/less/src",
 		"/E/jSouper-Material-UI/dist/template",
 		"/E/Git/material-ui",
 		"/E/Git/material-ui/src",
@@ -809,6 +871,14 @@
 	],
 	"file_history":
 	[
+		"/E/jSouper-Material-UI/dist/less/comp/switch.less",
+		"/E/Git/material-ui/docs/gulp/tasks/setWatch.js",
+		"/E/jSouper-Material-UI/server.js",
+		"/G/Chromedownload/jquery-2.1.1.js",
+		"/E/jSouper-Material-UI/dist/less/core/icon.less",
+		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/import/import-test-d.css",
+		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/errors/property-interp-not-defined.less",
+		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/maxmin/node_modules/gzip-size/node_modules/zlib-browserify/node_modules/tape/example/static/build.sh",
 		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.dropdown_menu.js",
 		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.buttons.js",
 		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.icons.js",
@@ -816,7 +886,6 @@
 		"/E/jSouper-Material-UI/dist/js/xmp.__core__.js",
 		"/E/jSouper-Material-UI/dist/less/comp/input.less",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/errors/import-no-semi.less",
-		"/E/jSouper-Material-UI/dist/less/core/icon.less",
 		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.input.html",
 		"/E/Git/material-ui/src/js/input.jsx",
 		"/E/jSouper-Material-UI/Gruntfile.js",
@@ -834,7 +903,6 @@
 		"/E/Git/material-ui/docs/src/less/pages/components/buttons.less",
 		"/E/jSouper-Material-UI/node_modules/grunt/internal-tasks/bump.js",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/import/invalid-css.less",
-		"/E/jSouper-Material-UI/server.js",
 		"/E/jSouper-Material-UI/dist/less/src/all.less",
 		"/E/jSouper-Material-UI/dist/less/comp/paperButton.less",
 		"/E/jSouper-Material-UI/dist/less/comp/paperLayer.less",
@@ -930,13 +998,7 @@
 		"/E/Git/O2O/node_modules/compression/node_modules/accepts/node_modules/mime-types/lib/mime.json",
 		"/E/Git/O2O/my_modules/alipay/node_modules/xmldom/test/index.js",
 		"/E/Git/O2O/server/RESTAPI/user.achs.rest.js",
-		"/E/Git/O2O/core/league/skill.js",
-		"/E/Git/O2O/core/league/admin.skill.js",
-		"/E/Git/O2O/node_modules/uns-ccap/addon/jpeglib/Licence_CeCILL_V2-en.txt",
-		"/E/Git/O2O/LICENSE",
-		"/E/kp2/o2oWebStoreMini/public/goods-details.html",
-		"/E/Git/O2O/server/RESTAPI/goods.evaluation.rest.js",
-		"/E/Git/O2O/core/goods/skill.js"
+		"/E/Git/O2O/core/league/skill.js"
 	],
 	"find":
 	{
@@ -1061,9 +1123,43 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"inheritWrap",
+			"container-inner",
+			"rgba(102, 187, 106, 0.87)",
+			"0",
+			"rgb",
+			"colour",
+			"#",
+			"rgba(0, 0, 0, 0.54)",
+			"inherit-wrap",
+			"Webkit",
+			"AnimateEnd",
+			"opacity:0",
+			"fadeIn",
+			"half-circle",
+			"animation",
+			"spinner-wrapper",
+			"50px",
+			"25px",
+			"50px",
+			"#2196F3",
+			"border",
+			"padding",
+			"margin",
+			"right",
+			"wobble",
+			"sporadic-rotate",
+			"sporadic-rotate ",
+			"left-wobble",
+			"eft-wobble",
+			"sporadic-rotate",
+			"ripple-default-animation {.ripple-default-animation;}",
+			"md-",
+			"#2196f3",
+			"md-",
 			"client",
 			"inherit-wrap",
 			":afte",
@@ -1157,41 +1253,7 @@
 			"&",
 			"lh-",
 			".mui-z",
-			".mui-z-",
-			"rgba(0, 0, 0, 0.24)",
-			"transition",
-			"ease-out-function",
-			"cubic-bezier",
-			".clockhand",
-			"onts.googleapis.com",
-			"is_bg_img",
-			"myConfig.is_bg_img_blur",
-			"is_bg_img_blur",
-			"checkConfig",
-			"readonly",
-			"$Event",
-			"onedit",
-			"readonly",
-			"edit",
-			"getLeague",
-			"league",
-			"League",
-			"league",
-			"getLeague",
-			"BusCon",
-			"ripple-default-animation",
-			"androidButton",
-			"Button",
-			"androidButton",
-			"top",
-			"background-color:",
-			"spanInner",
-			"div class=\"\"",
-			"span",
-			"div",
-			"_",
-			"jSouper_base",
-			"eventName"
+			".mui-z-"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1245,7 +1307,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1254,15 +1316,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 525,
+						"buffer_size": 520,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								507,
-								507
+								418,
+								418
 							]
 						],
 						"settings":
@@ -1273,24 +1335,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "index.html",
+					"file": "dist/template/xmp.material_ui.progress_circular.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 57085,
+						"buffer_size": 411,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1154,
-								1149
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 57262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1976,
+								1976
 							]
 						],
 						"settings":
@@ -1300,14 +1391,72 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 112.0,
+						"translation.y": 559.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "dist/template/xmp.material_ui.switch.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								479,
+								479
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "dist/template/xmp.material_ui.dropdown_menu.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								881,
+								881
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "dist/template/xmp.material_ui.icons.html",
 					"semi_transient": false,
 					"settings":
@@ -1319,8 +1468,8 @@
 						"selection":
 						[
 							[
-								105,
-								105
+								197,
+								197
 							]
 						],
 						"settings":
@@ -1331,116 +1480,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "dist/js/xmp.material_ui.icons.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26211,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26211,
-								26211
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 11335.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "build/xmp.material_ui.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27720,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27707,
-								27707
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 405.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "dist/js/xmp.material_ui.buttons.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 697,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								495,
-								495
-							],
-							[
-								561,
-								561
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
 					"file": "build/xmp.material_ui.html",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2898,
+						"buffer_size": 3303,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								708,
-								708
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1449,16 +1506,16 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1467,15 +1524,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 132,
+						"buffer_size": 166,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								124,
-								124
+								143,
+								159
 							]
 						],
 						"settings":
@@ -1486,29 +1543,58 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "dist/less/comp/switch.less",
+					"file": "dist/less/comp/progressCircular.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1647,
+						"buffer_size": 3300,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								849,
-								849
+								809,
+								809
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "dist/less/comp/input.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1876,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
 							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1516,11 +1602,42 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
+					"file": "dist/less/comp/switch.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1260,
+								1260
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"open_with_edit": true,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 679.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
 					"file": "dist/less/comp/paperButton.less",
 					"semi_transient": false,
 					"settings":
@@ -1532,23 +1649,23 @@
 						"selection":
 						[
 							[
-								343,
-								343
+								1161,
+								1161
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.x": -0.0,
+						"translation.y": 504.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
 					"file": "dist/less/core/icon.less",
 					"semi_transient": false,
 					"settings":
@@ -1574,11 +1691,11 @@
 						"translation.y": 33947.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
 					"file": "dist/less/comp/icons.less",
 					"semi_transient": false,
 					"settings":
@@ -1604,11 +1721,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 14,
 					"file": "dist/less/src/compatibility.less",
 					"semi_transient": false,
 					"settings":
@@ -1634,14 +1751,219 @@
 						"translation.y": 12077.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 21,
 					"type": "text"
 				}
 			]
 		},
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 15,
+					"file": "dist/js/xmp.material_ui.icons.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26211,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26211,
+								26211
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 11064.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "build/xmp.material_ui.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27707,
+								27707
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "dist/js/xmp.material_ui.buttons.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 697,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78,
+								78
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "dist/js/xmp.material_ui.progress_circular.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "dist/js/xmp.material_ui.input.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "dist/js/xmp.materail_ui.switch.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								358,
+								358
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "dist/js/xmp.__core__.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3748,
+								3748
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2206.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -1649,7 +1971,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 13,
+					"buffer": 22,
 					"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper-button.less",
 					"semi_transient": false,
 					"settings":
@@ -1674,11 +1996,11 @@
 						"translation.y": 2876.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
 					"file": "dist/less/comp/icons.less",
 					"semi_transient": false,
 					"settings":
@@ -1690,8 +2012,8 @@
 						"selection":
 						[
 							[
-								116,
-								116
+								311,
+								311
 							]
 						],
 						"settings":
@@ -1703,41 +2025,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "dist/less/comp/input.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1878,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1251,
-								1252
-							]
-						],
-						"settings":
-						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1121.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
+					"buffer": 23,
 					"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper.less",
 					"semi_transient": false,
 					"settings":
@@ -1762,7 +2054,7 @@
 						"translation.y": 48.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 24,
 					"type": "text"
 				}
 			]
@@ -1808,13 +2100,13 @@
 		"cols":
 		[
 			0.0,
-			0.955791335102,
+			0.75026164479,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.720567375887,
+			0.360992907801,
 			1.0
 		]
 	},
@@ -1838,6 +2130,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"xmpswit",
+				"jSouper-Material-UI\\dist\\js\\xmp.materail_ui.switch.js"
+			],
+			[
+				"inde",
+				"jSouper-Material-UI\\index.html"
+			],
+			[
+				"admin/newbus",
+				"jSouper-Material-UI\\node_modules\\grunt-contrib-less\\node_modules\\maxmin\\node_modules\\gzip-size\\node_modules\\zlib-browserify\\node_modules\\tape\\example\\static\\build.sh"
+			],
 			[
 				"xmpcionjs",
 				"jSouper-Material-UI\\dist\\js\\xmp.material_ui.icons.js"
@@ -2337,18 +2641,6 @@
 			[
 				"newre",
 				"O2O\\server\\RESTAPI\\news.rest.js"
-			],
-			[
-				"dotnarnews",
-				"O2O\\core\\dotnar_news\\_con.js"
-			],
-			[
-				"news.rest",
-				"O2O\\server\\RESTAPI\\news.rest.js"
-			],
-			[
-				"configte",
-				"O2O\\server\\RESTAPI\\config.template\\config.template.js"
 			]
 		],
 		"width": 0.0
@@ -2377,7 +2669,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 2,
 	"settings":
 	{
 	},
@@ -2385,7 +2677,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 235.0,
+	"side_bar_width": 257.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

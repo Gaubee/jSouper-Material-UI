@@ -12,6 +12,7 @@
         <script type="text/javascript">
         require(["common"], function() {
         window.removeLoader();
+            App.set("themeColor", "red");
             App.set("input_name","输入框Placeholder");
             var icons = ["social-cake",
             "social-group",
@@ -27,7 +28,8 @@
     </head>
     <body>
         <div style="display:none" id="jSouperApp" >
-            <android:input label="{{input_name}}" placeholder="哈哈" description="描述这个输入框"></android:input>
+            <android:progressCircular color="{{themeColor}}"></android:progressCircular>
+            <android:input color="{{themeColor}}" label="{{input_name}}" placeholder="哈哈" description="描述这个输入框"></android:input>
             <android:paperButton>
                 呵
                 <android:icon type="editor-insert-emoticon"></android:icon>
@@ -36,7 +38,7 @@
             </android:paperButton>
             <android:input label="{{input_name}}" placeholder="哈哈" description="描述这个输入框"></android:input>
 
-            <android:switch value="{{switch_1}}" bind-input="{{'switch_1'}}">显示图标</android:switch>
+            <android:switch color="{{themeColor}}" value="{{switch_1}}" bind-input="{{'switch_1'}}">显示图标</android:switch>
             <hr>
             <div id="icons" bind-style="width:300px;word-wrap: break-word;display:{{switch_1&&'inline-block'||'none'}};">
                 <android:icon type="toggle-check-box"></android:icon> 

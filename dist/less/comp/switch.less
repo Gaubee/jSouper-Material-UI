@@ -26,14 +26,14 @@
 		.transform(translate3d(0, 0, 0));
 		display: inline-block;
 		.switch-bar{
-			background-color: rgba(0, 0, 0, 0.54);
+			background-color: #8A8A8A;
 			position: absolute;
 			top: 12px;
 			width: 100%;
 			height: 1px;
 			pointer-events: none;
 		}
-		.container-inner{
+		containerInner{
 			position: relative;
 			top: 4px;
 			left: 0;
@@ -43,6 +43,7 @@
 			cursor: pointer;
 			margin-left: -8px;
 			.transition(all 0.1s linear);
+			border-color: rgba(102, 187, 106, 0.87);
 		}
 		.off{
 			position: absolute;
@@ -53,15 +54,19 @@
 			border: solid 2px;
 			border-radius: 50%;
 			// .transition(all ease 0.28s);
-			border-color: rgba(0, 0, 0, 0.54);
+			border-color: #8A8A8A;
 			box-sizing: border-box;
+			background-color: rgba(255, 255, 255, 0.5);
 		}
 		.on{
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 16px;
-			height: 16px;
+			width: 0;
+			height: 0;
+			border: 8px solid;
+			border-radius: 50%;
+			border-color: inherit;
 			border-radius: 50%;
 			// .transition(all ease 0.28s);
 			.transform(scale(0));
@@ -70,11 +75,11 @@
 
 	}
 	>.container.check{
-		.container-inner{
+		containerInner{
 			left: 100%;
 		}
 		.off{
-			border-color: rgba(102, 187, 106, 0.87);
+			border-color: inherit;
 		}
 		.on{
 			.transform(scale(0.55));
