@@ -203,6 +203,7 @@ customTagInit("android:paperbutton", function(vm) {
             _normal();
         }, 500)
     });
+    
 });
 customTagInit("android:dropdownmenu", function(vm) {
 });

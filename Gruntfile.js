@@ -115,12 +115,6 @@ function _material_ui_init_(jSouper){', '\n}\n}(this));']
                     base: '<%= src %>'
                 },
             }
-            // server: {
-            //     options: {
-            //         // keepalive: true,
-            //         base: '<%= src %>',
-            //     }
-            // }
         },
 
         watch: {
