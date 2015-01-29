@@ -101,7 +101,7 @@ function _material_ui_init_(jSouper){', '\n}\n}(this));']
         connect: {
             server: {
                 options: {
-                    port: 9010,
+                    port: 9009,
                     // Change this to '0.0.0.0' to access the server from outside.
                     // hostname: 'localhost',
                     middleware: function(connect, options) {
@@ -109,6 +109,11 @@ function _material_ui_init_(jSouper){', '\n}\n}(this));']
                             require('connect-livereload')({
                                 port: Number('<%= watch.options.livereload %>')
                             }),
+                            function(req, res, next) {
+                                res.setHeader("Access-Control-Allow-Origin", "*");
+                                res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+                                return next();
+                            },
                             connect.static(options.base[0]),
                         ];
                     },

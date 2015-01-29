@@ -1,0 +1,19 @@
+<xmp type="tag" name="android:ripple">
+<android:ripple
+ event-mousedown-show-touch-ripple="{{'$CPrivate.$Event.start_touch_ripple'}}" 
+ event-animationend-hidden-touch-ripple="{{'$CPrivate.$Event.end_touch_ripple'}}" 
+ event-mousedown-show-focus-ripple="{{'$CPrivate.$Event.show_focus_ripple'}}"
+ event-mouseup-hidden-focus-ripple="{{'$CPrivate.$Event.hidden_focus_ripple'}}"
+ class="android-ripple">
+	<div class="touch-ripple">
+		<div class="ripple-circle {{$CPrivate.$Cache.start_touch_ripple&&' is-started'}}  {{$CPrivate.$Cache.end_touch_ripple&&' is-ending'}}">
+			<div class="ripple-circle-inner">
+			</div>
+		</div>
+	</div>
+	<div class="focus-ripple {{$CPrivate.$Cache.focus_ripple&&'is-shown-x'}}">
+		<div class="focus-ripple-inner">
+		</div>
+	</div>
+</android:ripple>
+</xmp>

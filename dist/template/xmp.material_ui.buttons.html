@@ -1,12 +1,14 @@
 
 <xmp type="tag" name="android:paperButton">
-    <div class="android-paper-button android-paper z-depth-{{$Private.$Cache.layer_num}}">
-        <div class="paper-container" event-mousedown="{{'$Private.$Event.show'}}">
-            <div class="ripple {{$Private.$Cache.show&&'show'}}" bind-style="top:{{$Private.$Cache.top}}px;left:{{$Private.$Cache.left}}px">
+<android:paperButton>
+    <button class="paper-button enhanced-button android-paper z-depth-{{$CPrivate.$Cache.layer_num}} {{$CPrivate.$Cache.round?' round':' '}}  ${class}" ${__all_attrs__}>
+        <div class="paper-container z-depth-bottom" event-mousedown="{{'$CPrivate.$Event.show'}}">
+            <div class="ripple {{$CPrivate.$Cache.show&&'show'}}" bind-style="top:{{$CPrivate.$Cache.top}}px;left:{{$CPrivate.$Cache.left}}px;width:{{$CPrivate.$Cache.width}}px;height:{{$CPrivate.$Cache.height}}px;" event-animationend="{{'$CPrivate.$Event.hidden'}}">
             </div>
-            <spanInner ${__all_attrs__}>
+            <spanInner>
                 ${innerHTML}
             </spanInner>
         </div>
-    </div>
+    </button>
+</android:paperButton>
 </xmp>

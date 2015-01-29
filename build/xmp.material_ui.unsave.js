@@ -169,43 +169,372 @@ function _hexToRGBA(hex, opacity) {
 	var _B = hex.substr(4, 2);
 	return "rgba(" + parseInt(_R, 16) + "," + parseInt(_G, 16) + "," + parseInt(_B, 16) + "," + opacity || 1 + ")"
 }
-customTagInit("android:switch", function(vm) {
-	vm.set("$Private.$Event.check", function() {
-		vm.set("$Private.$Cache.is_check", this.checked);
+var date_time = {
+
+	addDays: function(d, days) {
+		var newDate = this.clone(d);
+		newDate.setDate(d.getDate() + days);
+		return newDate;
+	},
+
+	addMonths: function(d, months) {
+		var newDate = this.clone(d);
+		newDate.setMonth(d.getMonth() + months);
+		return newDate;
+	},
+
+	clone: function(d) {
+		return new Date(d.getTime());
+	},
+
+	getDaysInMonth: function(d) {
+		var resultDate = this.getFirstDayOfMonth(d);
+
+		resultDate.setMonth(resultDate.getMonth() + 1);
+		resultDate.setDate(resultDate.getDate() - 1);
+
+		return resultDate.getDate();
+	},
+
+	getFirstDayOfMonth: function(d) {
+		return new Date(d.getFullYear(), d.getMonth(), 1);
+	},
+
+	getFullMonth: function(d) {
+		var month = d.getMonth();
+		switch (month) {
+			// case 0:
+			// 	return 'January';
+			// case 1:
+			// 	return 'February';
+			// case 2:
+			// 	return 'March';
+			// case 3:
+			// 	return 'April';
+			// case 4:
+			// 	return 'May';
+			// case 5:
+			// 	return 'June';
+			// case 6:
+			// 	return 'July';
+			// case 7:
+			// 	return 'August';
+			// case 8:
+			// 	return 'September';
+			// case 9:
+			// 	return 'October';
+			// case 10:
+			// 	return 'November';
+			// case 11:
+			// 	return 'December';
+			case 0:
+				return '一月';
+			case 1:
+				return '二月';
+			case 2:
+				return '三月';
+			case 3:
+				return '四月';
+			case 4:
+				return '五月';
+			case 5:
+				return '六月';
+			case 6:
+				return '七月';
+			case 7:
+				return '八月';
+			case 8:
+				return '九月';
+			case 9:
+				return '十月';
+			case 10:
+				return '十一月';
+			case 11:
+				return '十二月';
+		}
+	},
+
+	getShortMonth: function(d) {
+		var month = d.getMonth();
+		switch (month) {
+			// case 0:
+			// 	return 'Jan';
+			// case 1:
+			// 	return 'Feb';
+			// case 2:
+			// 	return 'Mar';
+			// case 3:
+			// 	return 'Apr';
+			// case 4:
+			// 	return 'May';
+			// case 5:
+			// 	return 'Jun';
+			// case 6:
+			// 	return 'Jul';
+			// case 7:
+			// 	return 'Aug';
+			// case 8:
+			// 	return 'Sep';
+			// case 9:
+			// 	return 'Oct';
+			// case 10:
+			// 	return 'Nov';
+			// case 11:
+			// 	return 'Dec';
+			case 0:
+				return '一月';
+			case 1:
+				return '二月';
+			case 2:
+				return '三月';
+			case 3:
+				return '四月';
+			case 4:
+				return '五月';
+			case 5:
+				return '六月';
+			case 6:
+				return '七月';
+			case 7:
+				return '八月';
+			case 8:
+				return '九月';
+			case 9:
+				return '十月';
+			case 10:
+				return '十一月';
+			case 11:
+				return '十二月';
+		}
+	},
+
+	getDayOfWeek: function(d) {
+		var dow = d.getDay();
+		switch (dow) {
+			// case 0:
+			// 	return 'Sunday';
+			// case 1:
+			// 	return 'Monday';
+			// case 2:
+			// 	return 'Tuesday';
+			// case 3:
+			// 	return 'Wednesday';
+			// case 4:
+			// 	return 'Thursday';
+			// case 5:
+			// 	return 'Friday';
+			// case 6:
+			// 	return 'Saturday';
+			case 0:
+				return '周日';
+			case 1:
+				return '周一';
+			case 2:
+				return '周二';
+			case 3:
+				return '周三';
+			case 4:
+				return '周四';
+			case 5:
+				return '周五';
+			case 6:
+				return '周六';
+		}
+	},
+
+	getWeekArray: function(d) {
+		var dayArray = [];
+		var daysInMonth = this.getDaysInMonth(d);
+		var daysInWeek;
+		var emptyDays;
+		var firstDayOfWeek;
+		var week;
+		var weekArray = [];
+
+		for (var i = 1; i <= daysInMonth; i++) {
+			dayArray.push(new Date(d.getFullYear(), d.getMonth(), i));
+		};
+
+		while (dayArray.length) {
+			firstDayOfWeek = dayArray[0].getDay();
+			daysInWeek = 7 - firstDayOfWeek;
+			emptyDays = 7 - daysInWeek;
+			week = dayArray.splice(0, daysInWeek);
+
+			for (var i = 0; i < emptyDays; i++) {
+				week.unshift(null);
+			};
+
+			weekArray.push(week);
+		}
+
+		return weekArray;
+	},
+
+	format: function(date) {
+		var m = date.getMonth() + 1;
+		var d = date.getDate();
+		var y = date.getFullYear();
+		return y + "-" + m + '-' + d;
+	},
+
+	isEqualDate: function(d1, d2) {
+		return d1 && d2 &&
+			(d1.getDate() === d2.getDate()) &&
+			(d1.getFullYear() === d2.getFullYear()) &&
+			(d1.getMonth() === d2.getMonth());
+	},
+
+	monthDiff: function(d1, d2) {
+		var m;
+		m = (d1.getFullYear() - d2.getFullYear()) * 12;
+		m += d1.getMonth();
+		m -= d2.getMonth();
+		return m;
+	}
+
+};
+customTagInit("android:datepicker", function(vm) {
+	var androidInputNode = vm.getOneElementByTagName("android:Input");
+	var androidDatepickerNode = vm.getOneElementByTagName("android:datepicker");
+
+	function _initCalendar(current_date) {
+		var today = new Date;
+		vm.set("$CPrivate.$Cache.currentShortMonth", date_time.getShortMonth(current_date));
+		vm.set("$CPrivate.$Cache.currentMonth", date_time.getFullMonth(current_date));
+		vm.set("$CPrivate.$Cache.currentDay", date_time.getDayOfWeek(current_date));
+		vm.set("$CPrivate.$Cache.currentDate", current_date.getDate());
+		vm.set("$CPrivate.$Cache.currentYear", current_date.getFullYear());
+
+		var weekArray = date_time.getWeekArray(current_date);
+		weekArray.forEach(function(week) {
+			week.forEach(function(date) {
+				if (!date) {
+					return
+				}
+				date.date = date.getDate();
+				date.is_today = date_time.isEqualDate(date, today);
+				date.is_select = date_time.isEqualDate(date, current_date);
+			});
+		});
+		vm.set("$CPrivate.$Cache.weekArray", weekArray);
+	};
+	vm.set("$CPrivate.$Event.select_date", function(e, cvm) {
+		var select_date = cvm.get();
+		vm.set("$CPrivate.$Cache.select_date", select_date);
+		_initCalendar(select_date);
 	});
-	var containerInner = vm.getOneElementByTagName("containerInner");
-	_registerAttr(vm, "input", "color", function(key, value) {
-		value && (containerInner.style.borderColor = _hexToRGBA(value, 0.87));
+
+	//对话框的弹出与隐藏
+	var current_date
+	vm.set("$Private.$Event.show_dialog", function(e, cvm) {
+		vm.set("$CPrivate.$Cache.is_show", true);
+		current_date = new Date(androidInputNode.getValue());
+		_initCalendar(current_date);
+	});
+	vm.set("$Private.$Event.hidden_dialog", function(e, cvm) {
+		vm.set("$CPrivate.$Cache.is_show", false);
+	});
+	vm.set("$Private.$Event.set_select", function(e, cvm) {
+		var select_date = androidDatepickerNode.getDate();
+		androidInputNode.setValue(date_time.format(select_date));
+		vm.get("$Private.$Event.hidden_dialog")();
+	});
+	androidDatepickerNode.getDate = function() {
+		return vm.get("$CPrivate.$Cache.select_date") || new Date;
+	}
+
+	//月份的切换
+	vm.set("$CPrivate.$Event.prev_month", function() {
+		current_date.setMonth(current_date.getMonth() - 1);
+		_initCalendar(current_date);
+	});
+	vm.set("$CPrivate.$Event.next_month", function() {
+		current_date.setMonth(current_date.getMonth() + 1);
+		_initCalendar(current_date);
 	});
 });
-customTagInit("android:paperbutton", function(vm) {
+customTagInit("android:switch", function(vm) {
+	var containerInner = vm.getOneElementByTagName("containerInner");
+	var inputNode = vm.getOneElementByTagName("input");
 
+	jSouper.onElementPropertyChange(inputNode, "checked", function(attrKey, checked) {
+		vm.set("$CPrivate.$Cache.is_check", checked);
+	}, true);
+
+	jSouper.onElementPropertyChange(inputNode, "color", function(key, value) {
+		value && (containerInner.style.borderColor = _hexToRGBA(value, 0.87));
+	}, true);
+});
+customTagInit("android:paperbutton", function(vm) {
+    var buttonNode = vm.getOneElementByTagName("button");
+    var spanInnerNode = vm.getOneElementByTagName("spanInner");
+    var layer_num_normal;
+    var layer_num_clicking;
+    jSouper.onElementPropertyChange(buttonNode, "layer-num", function(attrKey, attrValue) {
+        var layer_num = attrValue ? ~~attrValue : 1;
+        if (layer_num < 1) {
+            layer_num_normal = 0;
+            layer_num_clicking = 0;
+        } else if (layer_num > 4) {
+            layer_num_normal = 4;
+            layer_num_clicking = 5;
+        } else {
+            layer_num_normal = layer_num;
+            layer_num_clicking = layer_num + 1;
+        }
+    }, true);
     //初始化
     _normal();
 
     function _clicking() {
-        vm.set("$Private.$Cache.layer_num", 2);
-        vm.set("$Private.$Cache.show", true);
+        vm.set("$CPrivate.$Cache.layer_num", layer_num_clicking);
+        vm.set("$CPrivate.$Cache.show", true);
     }
 
     function _normal() {
-        vm.set("$Private.$Cache.layer_num", 1);
-        vm.set("$Private.$Cache.show", false);
+        vm.set("$CPrivate.$Cache.layer_num", layer_num_normal);
+        vm.set("$CPrivate.$Cache.show", false);
+        vm.set("$CPrivate.$Cache.width", 0);
+        vm.set("$CPrivate.$Cache.height", 0);
     }
-    var _show_ti;
-    vm.set("$Private.$Event.show", function(e) {
+
+    jSouper.onElementPropertyChange(buttonNode, "round", function(attrKey, attrValue) {
+        vm.set("$CPrivate.$Cache.round", !!attrValue);
+    }, true);
+
+    // var _show_ti;
+    vm.set("$CPrivate.$Event.show", function(e) {
         _normal();
-        clearTimeout(_show_ti);
-        vm.set("$Private.$Cache.top", e.pageY - this.offsetTop);
-        vm.set("$Private.$Cache.left", e.pageX - this.offsetLeft);
+        // clearTimeout(_show_ti);
+        var offset = this.getBoundingClientRect();
+        var _re_y = e.pageY - offset.top - scrollY;
+        var _re_x = e.pageX - offset.left - scrollX;
+        vm.set("$CPrivate.$Cache.top", _re_y);
+        vm.set("$CPrivate.$Cache.left", _re_x);
+        var _re_x_2 = offset.width - _re_x;
+        if (_re_x_2 < _re_x) {
+            _re_x_2 = _re_x;
+        }
+        _re_x_2 *= 2;
+        vm.set("$CPrivate.$Cache.width", _re_x_2);
+        vm.set("$CPrivate.$Cache.height", _re_x_2);
         _clicking();
-        _show_ti = setTimeout(function() {
-            _normal();
-        }, 500)
+        // _show_ti = setTimeout(function() {
+        //     _normal();
+        // }, 500)
     });
-    
+    vm.set("$CPrivate.$Event.hidden", _normal);
 });
 customTagInit("android:dropdownmenu", function(vm) {
+});
+customTagInit("android:iconbutton", function(vm) {
+	vm.set("$CPrivate.$Event.show", function() {
+		vm.set("$CPrivate.$Cache.show_tooltip", true);
+	});
+	vm.set("$CPrivate.$Event.hidden", function() {
+		vm.set("$CPrivate.$Cache.show_tooltip", false);
+	});
 });
 var _icon_map = {
 	"toggle-check-box": "\ue600",
@@ -968,25 +1297,52 @@ customTagInit("android:icon", function(vm) {
 		className: "materail-icon-contain"
 	})[0];
 
-	function _initIcon() {
-		var type = iconNode.getAttribute("type")||"";
-		type = type.toString().toLowerCase();
-		result = _icon_map[type]||"";
+	;
+	jSouper.onElementPropertyChange(iconNode, "type", function(attrKey,attrValue) {
+		var type = String(attrValue || "").toLowerCase();
+		result = _icon_map[type] || "";
 		iconNode.innerHTML = result;
-	};
-	_initIcon();
-	jSouper.onElementPropertyChange(iconNode, "type", _initIcon);
+	}, true);
 })
 customTagInit("android:input", function(vm) {
+	var androidInputNode = vm.getOneElementByTagName("android:input");
 	var inheritWrap = vm.getOneElementByTagName("inheritWrap");
+	var inputNode = vm.getOneElementByTagName("input");
 	_registerAttr(vm, "input", "color", function(key, value) {
 		inheritWrap.style.color = value;
 		inheritWrap.style.backgroundColor = value;
 	});
+	androidInputNode.getValue = function() {
+		return inputNode.value;
+	};
+	androidInputNode.setValue = function(value) {
+		inputNode.value = value;
+		jSouper.dispatchEvent(inputNode, "change");
+	};
 });
-
 customTagInit("android:progresscircular", function(vm) {
 	_registerAttr(vm, "spinnerInner", "color", function(key, value) {
 		this.style.borderColor = value;
+	});
+});
+customTagInit("android:ripple", function(vm) {
+	var rippleNode = vm.getOneElementByTagName("android:ripple");
+	vm.set("$CPrivate.$Event.start_touch_ripple", function() {
+		vm.set("$CPrivate.$Cache.start_touch_ripple", true)
+		vm.set("$CPrivate.$Cache.end_touch_ripple", false)
+	});
+	vm.set("$CPrivate.$Event.end_touch_ripple", function() {
+		if (!vm.get("$CPrivate.$Cache.end_touch_ripple")) {
+			vm.set("$CPrivate.$Cache.end_touch_ripple", true)
+		} else {
+			vm.set("$CPrivate.$Cache.start_touch_ripple", false)
+			vm.set("$CPrivate.$Cache.end_touch_ripple", false)
+		}
+	});
+	vm.set("$CPrivate.$Event.show_focus_ripple", function() {
+		vm.set("$CPrivate.$Cache.focus_ripple", true)
+	});
+	vm.set("$CPrivate.$Event.hidden_focus_ripple", function() {
+		vm.set("$CPrivate.$Cache.focus_ripple", false)
 	});
 });

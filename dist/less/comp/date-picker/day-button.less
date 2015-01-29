@@ -1,0 +1,38 @@
+.date-picker-day-button {
+  position: relative;
+  float: left;
+  width: 36px;
+  // height: 36px;
+  padding: 4px 2px;
+  line-height: 32px;
+
+  .date-picker-day-button-select {
+    position: absolute;
+    background-color: @date-picker-select-color;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(0);
+    .ease-out();
+  }
+
+  .date-picker-day-button-label {
+    position: relative;
+  }
+
+  &.is-selected {
+    .date-picker-day-button-label {
+      color: @date-picker-select-text-color;
+    }
+    .date-picker-day-button-select {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &.is-current-date {
+    color: @date-picker-color;
+  }
+}

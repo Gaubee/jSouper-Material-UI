@@ -759,12 +759,10 @@ customTagInit("android:icon", function(vm) {
 		className: "materail-icon-contain"
 	})[0];
 
-	function _initIcon() {
-		var type = iconNode.getAttribute("type")||"";
-		type = type.toString().toLowerCase();
-		result = _icon_map[type]||"";
+	;
+	jSouper.onElementPropertyChange(iconNode, "type", function(attrKey,attrValue) {
+		var type = String(attrValue || "").toLowerCase();
+		result = _icon_map[type] || "";
 		iconNode.innerHTML = result;
-	};
-	_initIcon();
-	jSouper.onElementPropertyChange(iconNode, "type", _initIcon);
+	}, true);
 })

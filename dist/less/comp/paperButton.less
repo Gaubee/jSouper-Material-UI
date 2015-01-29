@@ -1,26 +1,38 @@
-.android-paper-button{
+button.paper-button{
     line-height: 20px;
-    padding-top: 5px;
     margin-bottom: 15px;
     letter-spacing: 0;
     text-transform: uppercase;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.87);
-    margin: 0;
+    margin: 0px;
     display: inline-block;
     height: 36px;
     min-width: 88px;
-    padding: 0;
+    padding: 0!important;
     cursor: pointer;
     margin-bottom: 16px;
-	.border-radius(2px);
+    .un-select;
 	.background-clip(padding-box);
 	*{
 		.transition(all 450ms @ease-out-function 0ms);
 		.box-sizing(border-box);
 	}
+	&.round{
+		height: 56px;
+		width: 56px;
+		min-width:0;
+		.border-radius(50%);
+		.paper-container{
+			.border-radius(50%);
+			spanInner{
+				padding: 0;
+			}
+		}
+	}
 	.paper-container{
-		.box-shadow(0 1px 6px rgba(0, 0, 0, 0.12));
+		// .box-shadow(0 1px 6px rgba(0, 0, 0, 0.12));
+		.border-radius(2px);
 		background-color: #FFF;
 		position: relative;
 		overflow: hidden;
@@ -37,14 +49,14 @@
 			line-height: 36px;
 			height: 36px;
 			display: inline-block;
-			position: relative;
+			// position: relative;
 			text-align: center;
 		}
 		.ripple{
 		    position: absolute;
 			top: 100%;
 			left: 100%;
-			.transform( translate(-50%, -50%));
+			// .transform(translate(-50%, -50%));
 			width: 0;
 			height: 0;
 			.background-clip(padding);
@@ -52,13 +64,16 @@
 			&.show{
 				.animation(ripple-default-animation 0.5s);
 			}
+			z-index: 2;
 		}
+		z-index: 3;
 	}
 }
 .ripple-default-animation {
-	0% { background-color: rgba(204, 204, 204, 0); } 
-	25% { background-color: #cccccc; } 
-	100% { width: 150px; height: 150px; background-color: rgba(204, 204, 204, 0); }
+	0% { .transform(translate(-50%, -50%), scale(0));background-color: rgba(0, 204, 204, 0); } 
+	25% { background-color: rgba(0, 0, 0, 0.1); } 
+	50% { .transform(translate(-50%, -50%), scale(0.85)); } 
+	100% { .transform(translate(-50%, -50%), scale(1));background-color: rgba(0, 204, 204, 0); }
 };
 @-webkit-keyframes ripple-default-animation {.ripple-default-animation;}
 @-moz-keyframes ripple-default-animation {.ripple-default-animation;}

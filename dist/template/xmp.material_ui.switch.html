@@ -1,7 +1,7 @@
 <xmp type="tag" name="android:switch">
-<div class="android-switch">
-	<input type="checkbox" ${__all_attrs__} event-change-set-private-result={{'$Private.$Event.check'}} >
-	<div class="container {{$Private.$Cache.is_check&&'check'}}">
+<android:switch class="android-switch">
+	<input type="checkbox" ${__all_attrs__} >
+	<div class="container {{$CPrivate.$Cache.is_check&&'check'}}">
 		<div class="switch-bar"></div>
 		<containerInner>
 			<div class="off"></div>
@@ -12,5 +12,5 @@
 	<div class="label">
 		<span> ${innerHTML} </span>
 	</div>
-</div>
+</android:switch>
 </xmp>

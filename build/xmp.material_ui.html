@@ -1,14 +1,100 @@
 
 <xmp type="tag" name="android:paperButton">
-    <div class="android-paper-button android-paper z-depth-{{$Private.$Cache.layer_num}}">
-        <div class="paper-container" event-mousedown="{{'$Private.$Event.show'}}">
-            <div class="ripple {{$Private.$Cache.show&&'show'}}" bind-style="top:{{$Private.$Cache.top}}px;left:{{$Private.$Cache.left}}px">
+<android:paperButton>
+    <button class="paper-button enhanced-button android-paper z-depth-{{$CPrivate.$Cache.layer_num}} {{$CPrivate.$Cache.round?' round':' '}}  ${class}" ${__all_attrs__}>
+        <div class="paper-container z-depth-bottom" event-mousedown="{{'$CPrivate.$Event.show'}}">
+            <div class="ripple {{$CPrivate.$Cache.show&&'show'}}" bind-style="top:{{$CPrivate.$Cache.top}}px;left:{{$CPrivate.$Cache.left}}px;width:{{$CPrivate.$Cache.width}}px;height:{{$CPrivate.$Cache.height}}px;" event-animationend="{{'$CPrivate.$Event.hidden'}}">
             </div>
-            <spanInner ${__all_attrs__}>
+            <spanInner>
                 ${innerHTML}
             </spanInner>
         </div>
-    </div>
+    </button>
+</android:paperButton>
+</xmp>
+<xmp type="tag" name="android:datePicker">
+<android:datePicker class="date-picker border-box">
+	<android:input event-click-show-dialog="{{'$Private.$Event.show_dialog'}}" ${__all_attrs__}></android:input>
+	<div class="date-picker-dialog dialog-window {{$CPrivate.$Cache.is_show&&'is-shown'}}" style="padding-top: 2.5px;">
+		<div class="dialog-window-contents date-picker-dialog-window android-paper z-depth-4 rounded">
+			<div class=" paper-container z-depth-bottom">
+				<div class="date-picker-calendar is-{{$CPrivate.$Cache.weekArray.length}}week">
+					<div class="date-picker-calendar-date-display date-picker-date-display">
+						<div class="date-picker-date-display-dow transition-slide-in is-up">
+						<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentDay}}
+						</div>
+						</div>
+						<div class="date-picker-date-display-date">
+						<div class="date-picker-date-display-month transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentShortMonth}}
+							</div>
+						</div>
+						<div class="date-picker-date-display-day transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentDate}}
+							</div>
+						</div>
+						<div class="date-picker-date-display-year transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentYear}}
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="date-picker-calendar-container">
+						<div class="date-picker-calendar-toolbar">
+							<div class="date-picker-calendar-toolbar-title transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+								<span>{{$CPrivate.$Cache.currentMonth}}</span>
+								<span> </span>
+								<span>{{$CPrivate.$Cache.currentYear}}</span>
+							</div>
+							</div>
+							<button event-click="{{'$CPrivate.$Event.prev_month'}}" class="date-picker-calendar-toolbar-button-left icon-button enhanced-button">
+								<android:icon type="hardware-keyboard-arrow-left"></android:icon>
+							</button>
+							<button event-click="{{'$CPrivate.$Event.next_month'}}" class="date-picker-calendar-toolbar-button-right icon-button enhanced-button">
+								<android:icon type="hardware-keyboard-arrow-right"></android:icon>
+							</button>
+						</div>
+						<ul class="date-picker-calendar-week-title">
+							<li class="date-picker-calendar-week-title-day">日</li>
+							<li class="date-picker-calendar-week-title-day">一</li>
+							<li class="date-picker-calendar-week-title-day">二</li>
+							<li class="date-picker-calendar-week-title-day">三</li>
+							<li class="date-picker-calendar-week-title-day">四</li>
+							<li class="date-picker-calendar-week-title-day">五</li>
+							<li class="date-picker-calendar-week-title-day">六</li>
+						</ul>
+						<div class="transition-slide-in is-left">
+							<div class="transition-slide-in-child date-picker-calendar-month">
+								{{#each $CPrivate.$Cache.weekArray}}
+								<div class="date-picker-calendar-month-week">
+								{{#each $This}}
+								{{#if $This}}
+								<button event-click="{{'$Caller.$Caller.$CPrivate.$Event.select_date'}}" class="date-picker-day-button enhanced-button {{is_select?' is-selected':(is_today?'is-current-date':' ')}}">
+									<div class="date-picker-day-button-select"></div><span class="date-picker-day-button-label">{{date}}</span></button>
+								{{#else}}
+								<span class="date-picker-day-button"></span>
+								{{/if}}
+								{{/each}}
+								</div>
+								{{/each}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dialog-window-actions">
+					<android:paperButton class="dialog-window-action" event-click="{{'$Private.$Event.hidden_dialog'}}">取消</android:paperButton>
+					<android:paperButton class="dialog-window-action" event-click="{{'$Private.$Event.set_select'}}">确定</android:paperButton>
+				</div>
+			</div>
+		</div>
+		<div class="overlay {{$CPrivate.$Cache.is_show&&'is-shown'}}"></div>
+	</div>
+</android:datePicker>
 </xmp>
 <xmp type="tag" name="android:dropdownmenu">
 <div class="drop-down-menu" style="width: 192px;">
@@ -55,50 +141,50 @@
 	</div>
 </div>
 </xmp>
+<xmp type="tag" name="android:iconButton"><android:iconButton> <!-- event-mousedown-show-ripple="{{'$CPrivate.$Event.show_ripple'}}" event-mouseup-hidden-ripple="{{'$CPrivate.$Event.hidden_ripple'}}" --><button class="icon-button enhanced-button ${class}" event-focus-show-tooltop="{{'$CPrivate.$Event.show'}}"  event-mouseenter-show-tooltop="{{'$CPrivate.$Event.show'}}"  event-blur-hidden-tooltop="{{'$CPrivate.$Event.hidden'}}"  event-mouseleave-hidden-tooltop="{{'$CPrivate.$Event.hidden'}}"  ${__all_attrs__}>	<div class="icon-button-tooltip tooltip {{$CPrivate.$Cache.show_tooltip&&'is-shown'}}"	style="left: 5px;">		<div class="tooltip-ripple"		style="width: 58px; height: 58px;">		</div>		<span class="tooltip-label">			Star		</span>	</div>	<android:icon type="${type}"></android:icon>	<android:ripple></android:ripple></button></android:iconButton></xmp>
 <xmp type="tag" name="android:icon">
-	<!-- <i class="icon-${type}"></i> -->
-	<div class="android-icon">
-	
-		<span class="materail-icon-contain" type="${type}"> </span>
-		<div class="label-contain">
-		${innerHTML}
-		</div>
+<!-- <i class="icon-${type}"></i> -->
+<android:icon class="android-icon">
+	<span class="materail-icon-contain" type="${type}"> </span>
+	<div class="label-contain">
+	${innerHTML}
 	</div>
+</android:icon>
 </xmp>
 <xmp type="tag" name="android:input">
-    <div class="android-input">
-	    <inheritWrap>
-	    	<!-- 移除placeholder的绑定放到最后，确保最后触发 -->
-	        <!-- <input required ${__all_attrs__} ${--placeholder}  > -->
+<android:Input class="android-input">
+    <inheritWrap>
+    	<!-- 移除placeholder的绑定放到最后，确保最后触发 -->
+        <!-- <input required ${__all_attrs__} ${--placeholder}  > -->
 
-	        <!-- 提升效率，不用placeholder来减少绑定 -->
-	        <input required ${__all_attrs__} >
-	        <inputPlaceholder>${label}</inputPlaceholder>
-	        <inputHighlight></inputHighlight>
-	        <inputBar></inputBar>
-	        <inputDescription>${description}</inputDescription>
-        </inheritWrap>
-    </div>
+        <!-- 提升效率，不用placeholder来减少绑定 -->
+        <input required ${__all_attrs__} >
+        <inputPlaceholder>${label}</inputPlaceholder>
+        <inputHighlight></inputHighlight>
+        <inputBar></inputBar>
+        <inputDescription>${description}</inputDescription>
+    </inheritWrap>
+</android:Input>
 </xmp>
 <xmp type="tag" name="android:progressCircular">
-	<div class="progress-circular" value="${value}">
-		<spinnerWrapper>
-			<spinnerInner ${__all_attrs__}>
-				<div class="gap"></div>
-				<div class="left half-circle-wrap">
-					<div class="half-circle"></div>
-				</div>
-				<div class="right half-circle-wrap">
-					<div class="half-circle"></div>
-				</div>
-			</spinnerInner>
-		</spinnerWrapper>
-	</div>
+<android:progressCircular class="progress-circular" value="${value}">
+	<spinnerWrapper>
+		<spinnerInner ${__all_attrs__}>
+			<div class="gap"></div>
+			<div class="left half-circle-wrap">
+				<div class="half-circle"></div>
+			</div>
+			<div class="right half-circle-wrap">
+				<div class="half-circle"></div>
+			</div>
+		</spinnerInner>
+	</spinnerWrapper>
+</android:progressCircular>
 </xmp>
 <xmp type="tag" name="android:switch">
-<div class="android-switch">
-	<input type="checkbox" ${__all_attrs__} event-change-set-private-result={{'$Private.$Event.check'}} >
-	<div class="container {{$Private.$Cache.is_check&&'check'}}">
+<android:switch class="android-switch">
+	<input type="checkbox" ${__all_attrs__} >
+	<div class="container {{$CPrivate.$Cache.is_check&&'check'}}">
 		<div class="switch-bar"></div>
 		<containerInner>
 			<div class="off"></div>
@@ -109,5 +195,24 @@
 	<div class="label">
 		<span> ${innerHTML} </span>
 	</div>
-</div>
+</android:switch>
+</xmp>
+<xmp type="tag" name="android:ripple">
+<android:ripple
+ event-mousedown-show-touch-ripple="{{'$CPrivate.$Event.start_touch_ripple'}}" 
+ event-animationend-hidden-touch-ripple="{{'$CPrivate.$Event.end_touch_ripple'}}" 
+ event-mousedown-show-focus-ripple="{{'$CPrivate.$Event.show_focus_ripple'}}"
+ event-mouseup-hidden-focus-ripple="{{'$CPrivate.$Event.hidden_focus_ripple'}}"
+ class="android-ripple">
+	<div class="touch-ripple">
+		<div class="ripple-circle {{$CPrivate.$Cache.start_touch_ripple&&' is-started'}}  {{$CPrivate.$Cache.end_touch_ripple&&' is-ending'}}">
+			<div class="ripple-circle-inner">
+			</div>
+		</div>
+	</div>
+	<div class="focus-ripple {{$CPrivate.$Cache.focus_ripple&&'is-shown-x'}}">
+		<div class="focus-ripple-inner">
+		</div>
+	</div>
+</android:ripple>
 </xmp>

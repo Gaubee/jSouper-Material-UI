@@ -1,0 +1,84 @@
+<xmp type="tag" name="android:datePicker">
+<android:datePicker class="date-picker border-box">
+	<android:input event-click-show-dialog="{{'$Private.$Event.show_dialog'}}" ${__all_attrs__}></android:input>
+	<div class="date-picker-dialog dialog-window {{$CPrivate.$Cache.is_show&&'is-shown'}}" style="padding-top: 2.5px;">
+		<div class="dialog-window-contents date-picker-dialog-window android-paper z-depth-4 rounded">
+			<div class=" paper-container z-depth-bottom">
+				<div class="date-picker-calendar is-{{$CPrivate.$Cache.weekArray.length}}week">
+					<div class="date-picker-calendar-date-display date-picker-date-display">
+						<div class="date-picker-date-display-dow transition-slide-in is-up">
+						<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentDay}}
+						</div>
+						</div>
+						<div class="date-picker-date-display-date">
+						<div class="date-picker-date-display-month transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentShortMonth}}
+							</div>
+						</div>
+						<div class="date-picker-date-display-day transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentDate}}
+							</div>
+						</div>
+						<div class="date-picker-date-display-year transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+							{{$CPrivate.$Cache.currentYear}}
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="date-picker-calendar-container">
+						<div class="date-picker-calendar-toolbar">
+							<div class="date-picker-calendar-toolbar-title transition-slide-in is-up">
+							<div class="transition-slide-in-child">
+								<span>{{$CPrivate.$Cache.currentMonth}}</span>
+								<span> </span>
+								<span>{{$CPrivate.$Cache.currentYear}}</span>
+							</div>
+							</div>
+							<button event-click="{{'$CPrivate.$Event.prev_month'}}" class="date-picker-calendar-toolbar-button-left icon-button enhanced-button">
+								<android:icon type="hardware-keyboard-arrow-left"></android:icon>
+							</button>
+							<button event-click="{{'$CPrivate.$Event.next_month'}}" class="date-picker-calendar-toolbar-button-right icon-button enhanced-button">
+								<android:icon type="hardware-keyboard-arrow-right"></android:icon>
+							</button>
+						</div>
+						<ul class="date-picker-calendar-week-title">
+							<li class="date-picker-calendar-week-title-day">日</li>
+							<li class="date-picker-calendar-week-title-day">一</li>
+							<li class="date-picker-calendar-week-title-day">二</li>
+							<li class="date-picker-calendar-week-title-day">三</li>
+							<li class="date-picker-calendar-week-title-day">四</li>
+							<li class="date-picker-calendar-week-title-day">五</li>
+							<li class="date-picker-calendar-week-title-day">六</li>
+						</ul>
+						<div class="transition-slide-in is-left">
+							<div class="transition-slide-in-child date-picker-calendar-month">
+								{{#each $CPrivate.$Cache.weekArray}}
+								<div class="date-picker-calendar-month-week">
+								{{#each $This}}
+								{{#if $This}}
+								<button event-click="{{'$Caller.$Caller.$CPrivate.$Event.select_date'}}" class="date-picker-day-button enhanced-button {{is_select?' is-selected':(is_today?'is-current-date':' ')}}">
+									<div class="date-picker-day-button-select"></div><span class="date-picker-day-button-label">{{date}}</span></button>
+								{{#else}}
+								<span class="date-picker-day-button"></span>
+								{{/if}}
+								{{/each}}
+								</div>
+								{{/each}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dialog-window-actions">
+					<android:paperButton class="dialog-window-action" event-click="{{'$Private.$Event.hidden_dialog'}}">取消</android:paperButton>
+					<android:paperButton class="dialog-window-action" event-click="{{'$Private.$Event.set_select'}}">确定</android:paperButton>
+				</div>
+			</div>
+		</div>
+		<div class="overlay {{$CPrivate.$Cache.is_show&&'is-shown'}}"></div>
+	</div>
+</android:datePicker>
+</xmp>
