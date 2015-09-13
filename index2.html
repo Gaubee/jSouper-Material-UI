@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <title></title>
+        <script type="text/javascript" src="./js/lib/require.js"></script>
+        <script type="text/javascript" src="./js/require.config.js"></script>
+        <script type="text/javascript">
+        require(["common"], function() {
+        window.removeLoader();
+            App.set("themeColor", "red");
+            App.set("switch_1",true);
+            App.set("input_name","输入框Placeholder");
+            var icons = ["social-cake",
+            "social-group",
+            "social-mood",
+            "social-domain"];
+            var i = 0;
+            setInterval(function () {
+                App.set("icon",icons[i%icons.length]);
+                i+=1
+            },1000);
+            App.set("$Event.reload_css",function () {
+                [].forEach.call(document.getElementsByTagName("link"),function (linkNode) {
+                    if (linkNode.href.indexOf("build/material_ui.css")!==-1) {
+                        linkNode.parentNode.removeChild(linkNode);
+                    }
+                });
+                require(["r_css!./build/material_ui.css?_="+Math.random()])
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div style="display:none" id="jSouperApp" >
+            <android:datePicker value="2015-2-1" label="选择日期" ></android:datePicker>
+            <android:datePicker value="2015-2-1" label="选择日期" ></android:datePicker>
+        </div>
+    </body>
+</html>

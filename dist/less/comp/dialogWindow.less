@@ -6,6 +6,7 @@
   width: 100%;
   height: 100%;
   transition: left 0ms @ease-out-function 450ms;
+  pointer-events: none;
 
   .dialog-window-contents {
     .ease-out();
@@ -32,6 +33,7 @@
   &.is-shown {
     left: 0px;
     transition: left 0ms @ease-out-function 0ms;
+    pointer-events: auto;
 
     .dialog-window-contents {
       opacity: 1;

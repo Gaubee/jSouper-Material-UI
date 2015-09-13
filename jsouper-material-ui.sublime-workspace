@@ -520,50 +520,100 @@
 	"buffers":
 	[
 		{
-			"file": "dist/template/xmp.material_ui.icon_button.html",
+			"file": "dist/less/comp/date-picker/date-picker.less",
 			"settings":
 			{
-				"buffer_size": 886,
-				"line_ending": "CR"
-			}
-		},
-		{
-			"file": "dist/template/xmp.ripple.html",
-			"settings":
-			{
-				"buffer_size": 783,
+				"buffer_size": 197,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Gruntfile.js",
+			"file": "dist/less/comp/date-picker/calendar-month.less",
 			"settings":
 			{
-				"buffer_size": 4505,
+				"buffer_size": 190,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "dist/less/comp/date-picker/calendar-toolbar.less",
 			"settings":
 			{
-				"buffer_size": 58479,
+				"buffer_size": 679,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "dist/js/xmp.materail_ui.switch.js",
+			"contents": "Searching 31 files for \"hover\"\n\nE:\\jSouper-Material-UI\\dist\\less\\comp\\date-picker.bak\\calendar-toolbar.less:\n   27      cursor: pointer;\n   28    }\n   29:   .icon-button:hover{\n   30      background-color: rgba(0, 0, 0, 0.1);\n   31    }\n\nE:\\jSouper-Material-UI\\dist\\less\\comp\\enhancedButton.less:\n   13      text-decoration: none;\n   14      \n   15:     &:hover {\n   16        text-decoration: none;\n   17      }\n\nE:\\jSouper-Material-UI\\dist\\less\\comp\\paperButton.less:\n   39  		height: 100%;\n   40  		width: 100%;\n   41: 		&:hover{\n   42  		    background-color: #E6E6E6;\n   43  		}\n\n3 matches across 3 files\n",
 			"settings":
 			{
-				"buffer_size": 475,
+				"buffer_size": 610,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "dist/less/comp/paperButton.less",
+			"settings":
+			{
+				"buffer_size": 1982,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "dist/template/xmp.material_ui.switch.html",
+			"file": "dist/less/comp/enhancedButton.less",
 			"settings":
 			{
-				"buffer_size": 442,
+				"buffer_size": 300,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/date-picker/day-button.less",
+			"settings":
+			{
+				"buffer_size": 782,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/date-picker.bak/calendar.less",
+			"settings":
+			{
+				"buffer_size": 967,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/core/mixins/clearfix.less",
+			"settings":
+			{
+				"buffer_size": 637,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/date-picker/date-display.less",
+			"settings":
+			{
+				"buffer_size": 1559,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/date-picker/calendar.less",
+			"settings":
+			{
+				"buffer_size": 967,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/less/comp/progressCircular.less",
+			"settings":
+			{
+				"buffer_size": 3331,
 				"line_ending": "Windows"
 			}
 		},
@@ -606,38 +656,27 @@
 				"buffer_size": 807,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper-button.less",
-			"settings":
-			{
-				"buffer_size": 5111,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "dist/less/comp/icons.less",
-			"settings":
-			{
-				"buffer_size": 494,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper.less",
-			"settings":
-			{
-				"buffer_size": 1059,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
-		"height": 356.0,
+		"height": 392.0,
+		"last_filter": "less",
 		"selected_items":
 		[
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"save",
 				"File: Save All"
@@ -645,10 +684,6 @@
 			[
 				"html",
 				"Set Syntax: HTML"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"js",
@@ -755,7 +790,7 @@
 				"Set Syntax: Markdown"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -778,19 +813,34 @@
 	"expanded_folders":
 	[
 		"/E/jSouper-Material-UI",
-		"/E/jSouper-Material-UI/dist/js",
+		"/E/jSouper-Material-UI/dist",
 		"/E/jSouper-Material-UI/dist/less",
 		"/E/jSouper-Material-UI/dist/less/comp",
-		"/E/jSouper-Material-UI/dist/template",
 		"/E/Git/material-ui",
 		"/E/Git/material-ui/src",
-		"/E/Git/material-ui/src/js",
 		"/E/Git/material-ui/src/less",
 		"/E/Git/material-ui/src/less/components",
+		"/E/Git/material-ui/src/less/components/date-picker",
 		"/E/Git/material-ui/src/less/components/ripples"
 	],
 	"file_history":
 	[
+		"/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper.less",
+		"/E/jSouper-Material-UI/build/material_ui.min.css",
+		"/E/jSouper-Material-UI/dist/less/comp/switch.less",
+		"/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper-button.less",
+		"/E/jSouper-Material-UI/dist/less/comp/icons.less",
+		"/E/jSouper-Material-UI/dist/less/comp/date-picker/date-picker-dialog.less",
+		"/E/jSouper-Material-UI/dist/less/comp/date-picker/calendar-month.less",
+		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.switch.html",
+		"/E/jSouper-Material-UI/dist/js/xmp.materail_ui.switch.js",
+		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.progress_circular.html",
+		"/E/jSouper-Material-UI/index.html",
+		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.icon_button.html",
+		"/E/jSouper-Material-UI/dist/template/xmp.ripple.html",
+		"/E/jSouper-Material-UI/Gruntfile.js",
+		"/E/jSouper-Material-UI/dist/less/comp/date-picker/day-button.less",
+		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.progress_circular.js",
 		"/E/jSouper-Material-UI/node_modules/grunt/node_modules/grunt-legacy-util/test/fixtures/Gruntfile-execArgv-child.js",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/lib/less/lessc_helper.js",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-watch/node_modules/tiny-lr-fork/node_modules/faye-websocket/examples/autobahn_client.js",
@@ -819,7 +869,6 @@
 		"/E/jSouper-Material-UI/dist/less/comp/ripples/circle.less",
 		"/E/Git/material-ui/src/js/icon-button.jsx",
 		"/E/jSouper-Material-UI/dist/less/core/icon.less",
-		"/E/jSouper-Material-UI/index.html",
 		"/E/Git/material-ui/CHANGELOG.md",
 		"/E/Git/material-ui/docs/src/less/component-info.less",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/css/import-once.css",
@@ -831,10 +880,8 @@
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/import/import-once-test-c.less",
 		"/E/Git/material-ui/src/js/ripples/focus-ripple.jsx",
 		"/E/jSouper-Material-UI/dist/js/xmp.__core__.js",
-		"/E/jSouper-Material-UI/dist/js/xmp.materail_ui.switch.js",
 		"/E/jSouper-Material-UI/dist/js/xmp.materail_ui.date_picker.js",
 		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.input.js",
-		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.progress_circular.js",
 		"/E/jSouper-Material-UI/build/xmp.material_ui.js",
 		"/E/jSouper-Material-UI/dist/js/xmp.material_ui.icons.js",
 		"/E/jSouper-Material-UI/dist/less/comp/tooltip.less",
@@ -846,7 +893,6 @@
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/node_modules/mkdirp/test/perm_sync.js",
 		"/E/jSouper-Material-UI/node_modules/grunt/node_modules/iconv-lite/test/performance.js",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/errors/parens-error-1.less",
-		"/E/jSouper-Material-UI/build/material_ui.min.css",
 		"/E/jSouper-Material-UI/dist/less/comp/input.less",
 		"/E/Git/material-ui/docs/src/less/pages/components/buttons.less",
 		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.buttons.html",
@@ -861,15 +907,11 @@
 		"/E/jSouper-Material-UI/build/xmp.material_ui.html",
 		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.input.html",
 		"/E/jSouper-Material-UI/dist/less/comp/date-picker/date-picker.less",
-		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.icon_button.html",
 		"/E/Git/material-ui/src/less/components/drop-down-icon.less",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-uglify/node_modules/uglify-js/test/compress/drop-unused.js",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/less/import/import-and-relative-paths-test.less",
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/css/extract-and-length.css",
 		"/E/Git/material-ui/docs/src/app/components/app-left-nav.jsx",
-		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.progress_circular.html",
-		"/E/jSouper-Material-UI/dist/template/xmp.material_ui.switch.html",
-		"/E/jSouper-Material-UI/dist/less/comp/date-picker/day-button.less",
 		"/E/jSouper-Material-UI/dist/less/comp/dialogWindow.less",
 		"/E/jSouper-Material-UI/dist/less/src/variables.less",
 		"/E/jSouper-Material-UI/dist/less/core/typography.less",
@@ -896,7 +938,6 @@
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/browser/runner-errors-options.js",
 		"/E/jSouper-Material-UI/README.md",
 		"/E/Git/material-ui/src/js/date-picker/calendar.jsx",
-		"/E/jSouper-Material-UI/Gruntfile.js",
 		"/E/Git/material-ui/src/less/variables/custom-variables.less",
 		"/E/jSouper-Material-UI/node_modules/grunt/node_modules/grunt-legacy-log/examples.js",
 		"/E/jSouper-Material-UI/node_modules/grunt/node_modules/colors/example.html",
@@ -906,19 +947,12 @@
 		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/css/debug/linenumbers-all.css",
 		"/E/Git/material-ui/src/js/enhanced-button.jsx",
 		"/E/jSouper-Material-UI/dist/less/core/exports.less",
-		"/E/jSouper-Material-UI/dist/less/comp/date-picker/calendar-month.less",
 		"/E/jSouper-Material-UI/dist/less/src/compatibility.less",
-		"/E/jSouper-Material-UI/dist/less/comp/icons.less",
 		"/E/Git/material-ui/src/less/mixins/transitions.less",
-		"/E/jSouper-Material-UI/dist/less/comp/date-picker/date-picker-dialog.less",
 		"/E/jSouper-Material-UI/dist/less/comp/date-picker/date-display.less",
 		"/E/jSouper-Material-UI/dist/less/comp/date-picker/calendar.less",
 		"/E/Git/material-ui/src/less/variables/spacing.less",
-		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/css/variables-in-at-rules.css",
-		"/E/jSouper-Material-UI/dist/less/comp/progressCircular.less",
-		"/E/jSouper-Material-UI/dist/less/comp/switch.less",
-		"/E/Git/material-ui/docs/src/app/components/pages/components/switches.jsx",
-		"/E/jSouper-Material-UI/node_modules/grunt-contrib-uglify/node_modules/uglify-js/test/compress/switch.js"
+		"/E/jSouper-Material-UI/node_modules/grunt-contrib-less/node_modules/less/test/css/variables-in-at-rules.css"
 	],
 	"find":
 	{
@@ -929,6 +963,10 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"E:\\jSouper-Material-UI\\dist\\less\\comp",
+			"E:\\jSouper-Material-UI\\dist\\less\\comp\\date-picker",
+			"E:\\jSouper-Material-UI\\dist\\less",
+			"E:\\jSouper-Material-UI\\dist\\less\\comp\\date-picker",
 			"E:\\Git\\material-ui\\src\\less",
 			"E:\\jSouper-Material-UI\\dist\\less",
 			"E:\\Git\\material-ui\\src\\less",
@@ -1052,10 +1090,7 @@
 			"E:\\Git\\HTML-ViewParse\\src",
 			"E:\\Git\\HTML-ViewParse\\.demo",
 			"E:\\Git\\HTML-ViewParse\\src",
-			"E:\\Git\\HTML-ViewParse\\.demo\\.test",
-			"E:\\Git\\HTML-ViewParse\\src",
-			"E:\\Git\\diy-editor-old\\diy-editor\\js",
-			""
+			"E:\\Git\\HTML-ViewParse\\.demo\\.test"
 		]
 	},
 	"find_state":
@@ -1063,6 +1098,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hover",
+			"48px",
+			"clearfix",
+			"date-picker-calendar-week-title",
+			"te-picker-calendar-containe",
+			"\" \"",
+			":after",
+			"cker-calendar-month-week:after",
+			"date-picker-calendar-month-week",
+			"date-picker-select-color",
+			"mui-",
+			"date-picker-calendar-month-week",
 			"_",
 			"mousedown",
 			"_",
@@ -1178,19 +1225,7 @@
 			"ReactCSSTransitionGroup",
 			"SlideInTransitionGroup",
 			".ease-out",
-			"@desktop-gutter",
-			"body-text-color",
-			"@date-picker-calendar-text-color",
-			".mui-",
-			"font-weight-medium",
-			"data",
-			"selectedDate",
-			"SelectedDate",
-			"selectedDate",
-			"SelectedDate",
-			"selectedDate",
-			"SelectedDate",
-			"selectedDate"
+			"@desktop-gutter"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1250,30 +1285,291 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "dist/template/xmp.material_ui.icon_button.html",
+					"file": "dist/less/comp/date-picker/date-picker.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 886,
+						"buffer_size": 197,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								367,
-								367
+								182,
+								182
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dist/less/comp/date-picker/calendar-month.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dist/less/comp/date-picker/calendar-toolbar.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 610,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										170,
+										175
+									],
+									[
+										356,
+										361
+									],
+									[
+										526,
+										531
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								532,
+								532
+							]
+						],
+						"settings":
+						{
+							"default_dir": "E:\\jSouper-Material-UI",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "dist/less/comp/paperButton.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								786,
+								786
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "dist/less/comp/enhancedButton.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "dist/less/comp/date-picker/day-button.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 782,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "dist/less/comp/date-picker.bak/calendar.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								170,
+								170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "dist/less/core/mixins/clearfix.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1283,162 +1579,101 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "dist/template/xmp.ripple.html",
+					"buffer": 9,
+					"file": "dist/less/comp/date-picker/date-display.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 783,
+						"buffer_size": 1559,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								783,
-								783
+								527,
+								527
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 32.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Gruntfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3702,
-								3702
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1320.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "index.html",
+					"buffer": 10,
+					"file": "dist/less/comp/date-picker/calendar.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 58479,
+						"buffer_size": 967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3009,
-								3017
+								771,
+								771
 							]
 						],
 						"settings":
 						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 600.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 11,
+					"file": "dist/less/comp/progressCircular.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								853,
+								853
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 196.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "dist/js/xmp.materail_ui.switch.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								475,
-								475
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "dist/template/xmp.material_ui.switch.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 442,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								119,
-								119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 6,
+					"buffer": 12,
 					"file": "dist/less/comp/ripples/focus-ripple.less",
 					"semi_transient": false,
 					"settings":
@@ -1456,19 +1691,19 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 13,
 					"file": "dist/less/comp/ripples/circle.less",
 					"semi_transient": true,
 					"settings":
@@ -1486,7 +1721,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1494,11 +1729,11 @@
 						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 14,
 					"file": "dist/less/comp/ripples/exports.less",
 					"semi_transient": false,
 					"settings":
@@ -1516,13 +1751,13 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 15,
 					"type": "text"
 				}
 			]
@@ -1532,7 +1767,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 9,
+					"buffer": 15,
 					"file": "dist/js/xmp.material_ui.icon_button.js",
 					"semi_transient": false,
 					"settings":
@@ -1557,11 +1792,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 16,
 					"file": "dist/js/xmp.ripple.js",
 					"semi_transient": false,
 					"settings":
@@ -1573,8 +1808,8 @@
 						"selection":
 						[
 							[
-								458,
-								458
+								776,
+								776
 							]
 						],
 						"settings":
@@ -1587,103 +1822,14 @@
 						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 11,
-					"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper-button.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5111,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3644,
-								3644
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3255.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "dist/less/comp/icons.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 494,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								94,
-								94
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/E/TEMP/jsx/node_modules/material-ui/docs/dist/less/components/paper.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1059,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								273,
-								273
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1727,13 +1873,13 @@
 		"cols":
 		[
 			0.0,
-			0.69526069627,
+			0.747397416721,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.857894736842,
+			0.884811046228,
 			1.0
 		]
 	},
@@ -1746,6 +1892,7 @@
 	{
 		"height": 0.0
 	},
+	"pinned_build_system": "",
 	"project": "jsouper-material-ui.sublime-project",
 	"replace":
 	{
@@ -1755,8 +1902,17 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"progress",
+				"jSouper-Material-UI\\dist\\template\\xmp.material_ui.progress_circular.html"
+			],
+			[
+				"index",
+				"jSouper-Material-UI\\index.html"
+			],
 			[
 				"xmps",
 				"jSouper-Material-UI\\dist\\template\\xmp.material_ui.switch.html"
@@ -1788,10 +1944,6 @@
 			[
 				"xmpbutton",
 				"jSouper-Material-UI\\dist\\template\\xmp.material_ui.buttons.html"
-			],
-			[
-				"index",
-				"jSouper-Material-UI\\index.html"
 			],
 			[
 				"xmpdatepickerjs",
@@ -2264,10 +2416,6 @@
 			[
 				"role",
 				"O2O\\server\\RESTAPI\\role.js"
-			],
-			[
-				"configres",
-				"O2O\\server\\RESTAPI\\config.rest.js"
 			]
 		],
 		"width": 0.0
@@ -2275,15 +2423,16 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"temp",
-				"E:\\TEMP\\temp.sublime-project"
+				"",
+				"C:\\Users\\Gaubee\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\O2O.window.sublime-project"
 			],
 			[
-				"",
-				"D:\\Program Files\\Sublime Text 3\\project\\jSouper2.sublime-project"
+				"temp",
+				"E:\\TEMP\\temp.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -2291,6 +2440,7 @@
 	"select_symbol":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -2304,7 +2454,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 244.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

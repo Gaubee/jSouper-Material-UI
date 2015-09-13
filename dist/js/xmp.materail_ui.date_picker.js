@@ -227,15 +227,15 @@ customTagInit("android:datepicker", function(vm) {
 	var androidInputNode = vm.getOneElementByTagName("android:Input");
 	var androidDatepickerNode = vm.getOneElementByTagName("android:datepicker");
 
-	function _initCalendar(current_date) {
+	function _initCalendar(current_date, init_data) {
 		var today = new Date;
-		vm.set("$CPrivate.$Cache.currentShortMonth", date_time.getShortMonth(current_date));
-		vm.set("$CPrivate.$Cache.currentMonth", date_time.getFullMonth(current_date));
-		vm.set("$CPrivate.$Cache.currentDay", date_time.getDayOfWeek(current_date));
-		vm.set("$CPrivate.$Cache.currentDate", current_date.getDate());
-		vm.set("$CPrivate.$Cache.currentYear", current_date.getFullYear());
+		vm.set("$CPrivate.$Cache.currentShortMonth", date_time.getShortMonth(init_data));
+		vm.set("$CPrivate.$Cache.currentMonth", date_time.getFullMonth(init_data));
+		vm.set("$CPrivate.$Cache.currentDay", date_time.getDayOfWeek(init_data));
+		vm.set("$CPrivate.$Cache.currentDate", init_data.getDate());
+		vm.set("$CPrivate.$Cache.currentYear", init_data.getFullYear());
 
-		var weekArray = date_time.getWeekArray(current_date);
+		var weekArray = date_time.getWeekArray(init_data);
 		weekArray.forEach(function(week) {
 			week.forEach(function(date) {
 				if (!date) {
@@ -249,37 +249,45 @@ customTagInit("android:datepicker", function(vm) {
 		vm.set("$CPrivate.$Cache.weekArray", weekArray);
 	};
 	vm.set("$CPrivate.$Event.select_date", function(e, cvm) {
+		//标记为已经选中
 		var select_date = cvm.get();
+		current_date = select_date;
+		_initCalendar(current_date, init_data);//完全刷新，确保以前标记的显示no_select状态
+		//保存新标记
 		vm.set("$CPrivate.$Cache.select_date", select_date);
-		_initCalendar(select_date);
 	});
 
+
+	var init_data, //initdata用来处理日历信息
+		current_date; //currentdata用来标记用户选中的日期
+
 	//对话框的弹出与隐藏
-	var current_date
-	vm.set("$Private.$Event.show_dialog", function(e, cvm) {
+	vm.set("$CPrivate.$Event.show_dialog", function(e, cvm) {
 		vm.set("$CPrivate.$Cache.is_show", true);
+		//初始化 current_data init_data 
 		current_date = new Date(androidInputNode.getValue());
-		_initCalendar(current_date);
+		init_data = isNaN(current_date) ? new Date : current_date;
+		_initCalendar(current_date, init_data);
 	});
-	vm.set("$Private.$Event.hidden_dialog", function(e, cvm) {
+	vm.set("$CPrivate.$Event.hidden_dialog", function(e, cvm) {
 		vm.set("$CPrivate.$Cache.is_show", false);
 	});
-	vm.set("$Private.$Event.set_select", function(e, cvm) {
+	vm.set("$CPrivate.$Event.set_select", function(e, cvm) {
 		var select_date = androidDatepickerNode.getDate();
-		androidInputNode.setValue(date_time.format(select_date));
-		vm.get("$Private.$Event.hidden_dialog")();
+		select_date && androidInputNode.setValue(date_time.format(select_date));
+		vm.get("$CPrivate.$Event.hidden_dialog")();
 	});
 	androidDatepickerNode.getDate = function() {
-		return vm.get("$CPrivate.$Cache.select_date") || new Date;
-	}
+		return vm.get("$CPrivate.$Cache.select_date"); //|| new Date;
+	};
 
 	//月份的切换
 	vm.set("$CPrivate.$Event.prev_month", function() {
-		current_date.setMonth(current_date.getMonth() - 1);
-		_initCalendar(current_date);
+		init_data.setMonth(init_data.getMonth() - 1);
+		_initCalendar(current_date, init_data);
 	});
 	vm.set("$CPrivate.$Event.next_month", function() {
-		current_date.setMonth(current_date.getMonth() + 1);
-		_initCalendar(current_date);
+		init_data.setMonth(init_data.getMonth() + 1);
+		_initCalendar(current_date, init_data);
 	});
 });

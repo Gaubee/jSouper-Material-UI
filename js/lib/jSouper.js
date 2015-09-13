@@ -563,6 +563,7 @@ var
             name: eventName,
             fn: eventFun
         };
+        debugger
         var _fn = result.fn = (function(fixEvent) {
             return function(e) {
                 fixEvent(e);
